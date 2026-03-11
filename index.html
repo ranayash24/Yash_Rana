@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yash Rana — Software Developer & Data Scientist | Portfolio</title>
+  <meta name="description" content="Portfolio of Yash Rana — Full Stack Developer, Data Scientist, and ML Engineer. Master's student at Concordia University, Montréal." />
+  <meta name="keywords" content="Yash Rana, Software Developer, Data Scientist, Machine Learning Engineer, Concordia University, Full Stack Developer, Portfolio, Python, React, FastAPI" />
+  <meta property="og:title" content="Yash Rana — Software Developer & Data Scientist" />
+  <meta property="og:description" content="Full Stack Developer · Data Scientist · ML Engineer — Building intelligent, production-grade systems." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#about" class="nav__logo" aria-label="Go to About">
+      <span class="nav__logo-text">YR</span>
+    </a>
+    <button class="nav__menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#experience" class="nav__link">Experience</a></li>
+      <li><a href="#projects" class="nav__link">Projects</a></li>
+      <li><a href="#skills" class="nav__link">Skills</a></li>
+      <li><a href="#publications" class="nav__link">Research</a></li>
+      <li><a href="#contact" class="nav__link nav__link--cta">Let's Talk</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__links">
+      <li><a href="#about" class="mobile-menu__link">About</a></li>
+      <li><a href="#experience" class="mobile-menu__link">Experience</a></li>
+      <li><a href="#projects" class="mobile-menu__link">Projects</a></li>
+      <li><a href="#skills" class="mobile-menu__link">Skills</a></li>
+      <li><a href="#publications" class="mobile-menu__link">Research</a></li>
+      <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="hero">
+    <canvas class="hero__canvas" id="heroCanvas"></canvas>
+    <div class="hero__content">
+      <div class="hero__badge reveal-up">
+        <span class="hero__badge-dot"></span>
+        <span>Open to opportunities · Montréal, QC</span>
+      </div>
+      <h1 class="hero__title">
+        <span class="hero__title-line reveal-up" style="--delay:0.05s">Yash</span>
+        <span class="hero__title-line hero__title-line--accent reveal-up" style="--delay:0.15s">Rana</span>
+      </h1>
+      <div class="hero__typing-wrapper reveal-up" style="--delay:0.25s">
+        <span class="hero__typing-prefix">I'm a&nbsp;</span>
+        <span class="hero__typing" id="typingText"></span>
+        <span class="hero__cursor-blink">|</span>
+      </div>
+      <p class="hero__subtitle reveal-up" style="--delay:0.35s">
+        Turning Data into Actionable Knowledge<br/>Building Full-Stack Solutions
+      </p>
+      <div class="hero__cta reveal-up" style="--delay:0.45s">
+        <a href="#projects" class="btn btn--primary">View My Work</a>
+        <a href="#contact" class="btn btn--ghost">Contact Me</a>
+        <a href="#" class="btn btn--outline" id="resumeBtn">Download Resume ↓</a>
+      </div>
+      <div class="hero__socials reveal-up" style="--delay:0.55s">
+        <a href="https://github.com/ranayash24" target="_blank" class="hero__social-link" aria-label="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/yash-rana" target="_blank" class="hero__social-link" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:yashrana2402@gmail.com" class="hero__social-link" aria-label="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat reveal-up" style="--delay:0.5s">
+        <span class="hero__stat-number" data-target="39">0</span><span class="hero__stat-suffix">+</span>
+        <span class="hero__stat-label">GitHub Repos</span>
+      </div>
+      <div class="hero__stat reveal-up" style="--delay:0.6s">
+        <span class="hero__stat-number" data-target="8">0</span><span class="hero__stat-suffix">+</span>
+        <span class="hero__stat-label">Projects Built</span>
+      </div>
+      <div class="hero__stat reveal-up" style="--delay:0.7s">
+        <span class="hero__stat-number" data-target="95">0</span><span class="hero__stat-suffix">%</span>
+        <span class="hero__stat-label">ML Model Accuracy</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee Banner -->
+  <div class="marquee-banner">
+    <div class="marquee-track">
+      <span>Full Stack Development</span><span class="marquee-dot">✦</span>
+      <span>Machine Learning</span><span class="marquee-dot">✦</span>
+      <span>Data Science</span><span class="marquee-dot">✦</span>
+      <span>LLM Integration</span><span class="marquee-dot">✦</span>
+      <span>NLP & Transformers</span><span class="marquee-dot">✦</span>
+      <span>Distributed Systems</span><span class="marquee-dot">✦</span>
+      <span>Cloud Architecture</span><span class="marquee-dot">✦</span>
+      <span>Published Researcher</span><span class="marquee-dot">✦</span>
+      <span>Full Stack Development</span><span class="marquee-dot">✦</span>
+      <span>Machine Learning</span><span class="marquee-dot">✦</span>
+      <span>Data Science</span><span class="marquee-dot">✦</span>
+      <span>LLM Integration</span><span class="marquee-dot">✦</span>
+      <span>NLP & Transformers</span><span class="marquee-dot">✦</span>
+      <span>Distributed Systems</span><span class="marquee-dot">✦</span>
+      <span>Cloud Architecture</span><span class="marquee-dot">✦</span>
+      <span>Published Researcher</span><span class="marquee-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__left">
+          <div class="section-label reveal-up">About Me</div>
+          <h2 class="section-title reveal-up">
+            Motivated. Detail-oriented.<br/>
+            <span class="text-accent">Results-driven.</span>
+          </h2>
+          <p class="about__text reveal-up">
+            Motivated and detail-oriented Software Developer with a background in computer science since 2020. Known for delivering in deadline-driven environments with a patient, methodical approach to problem-solving.
+          </p>
+          <p class="about__text reveal-up">
+            Able to quickly pick up new tools and platforms, work independently or in cross-functional teams, and contribute to both research work and production-grade systems. Currently pursuing a Master of Applied Computer Science (MApCompSc) at Concordia University, Montréal.
+          </p>
+          <div class="about__meta reveal-up">
+            <div class="about__meta-item">
+              <span class="about__meta-icon">📍</span>
+              <span>Montréal, QC, Canada</span>
+            </div>
+            <div class="about__meta-item">
+              <span class="about__meta-icon">🎓</span>
+              <span>Concordia University, MApCompSc · 2024–2026</span>
+            </div>
+            <div class="about__meta-item">
+              <span class="about__meta-icon">🏆</span>
+              <span>SSIP Hackathon 2022 — Finalist</span>
+            </div>
+            <div class="about__meta-item">
+              <span class="about__meta-icon">📄</span>
+              <span>Published Researcher — Atlantis Press, ICAAAI 2025</span>
+            </div>
+          </div>
+        </div>
+        <div class="about__right reveal-up">
+          <div class="about__image-wrapper">
+            <div class="about__image-frame">
+              <div class="about__image-placeholder">
+                <div class="about__avatar">YR</div>
+                <div class="about__image-glow"></div>
+              </div>
+              <div class="about__image-badge">Open to Work</div>
+            </div>
+            <div class="about__image-accent"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education Cards -->
+      <div class="education reveal-up">
+        <div class="section-label" style="margin-top:5rem;">Education</div>
+        <div class="education__grid">
+          <div class="edu-card">
+            <div class="edu-card__year">Sep 2024 — May 2026</div>
+            <div class="edu-card__badge edu-card__badge--current">Current</div>
+            <h3 class="edu-card__degree">Master of Applied Computer Science</h3>
+            <span class="edu-card__school">Concordia University</span>
+            <span class="edu-card__location">Montréal, QC, Canada</span>
+          </div>
+          <div class="edu-card">
+            <div class="edu-card__year">Sep 2020 — Apr 2024</div>
+            <h3 class="edu-card__degree">Bachelor of Engineering — Computer Engineering</h3>
+            <span class="edu-card__school">Gujarat Technological University</span>
+            <span class="edu-card__location">Gujarat, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-label reveal-up">Work Experience</div>
+      <h2 class="section-title reveal-up">Where I've<br/><span class="text-accent">made an impact.</span></h2>
+
+      <div class="timeline">
+        <div class="timeline__line"></div>
+
+        <div class="timeline__item reveal-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <div class="timeline__meta">
+              <span class="timeline__date">Dec 2023 — Jun 2024</span>
+            </div>
+            <h3 class="timeline__role">Data Science Intern</h3>
+            <span class="timeline__company">Blue Data Consulting · Remote</span>
+            <div class="timeline__impact-row">
+              <div class="impact-badge"><strong>−68%</strong> Generation Time</div>
+              <div class="impact-badge"><strong>92%</strong> Accuracy in Tone</div>
+              <div class="impact-badge"><strong>+30%</strong> Generative Consistency</div>
+            </div>
+            <ul class="timeline__points">
+              <li>Built an end-to-end AI content generation system that converts client descriptions into structured text, audio, and video outputs using LLMs, LangChain, and Azure Cognitive Services</li>
+              <li>Engineered a production text-to-speech and video generation workflow with Azure Speech + Video Indexer APIs, cutting generation time from 25 → 8 minutes (−68%) while maintaining 92% accuracy in tone and context</li>
+              <li>Integrated feedback-driven prompt refinement and automated quality scoring, improving generative consistency by 30% across production use cases</li>
+            </ul>
+            <div class="timeline__tech">
+              <span>Python</span><span>LangChain</span><span>Azure Cognitive Services</span><span>Azure Speech API</span><span>Azure Video Indexer</span><span>LLMs</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal-up">
+          <div class="timeline__dot"></div>
+          <div class="timeline__content">
+            <div class="timeline__meta">
+              <span class="timeline__date">Jun 2023 — Nov 2023</span>
+            </div>
+            <h3 class="timeline__role">Full Stack Developer Intern</h3>
+            <span class="timeline__company">ShapeAI · Remote</span>
+            <div class="timeline__impact-row">
+              <div class="impact-badge"><strong>+83%</strong> Active Users</div>
+              <div class="impact-badge"><strong>−45%</strong> Backend Errors</div>
+              <div class="impact-badge"><strong>+40%</strong> Load Speed</div>
+            </div>
+            <ul class="timeline__points">
+              <li>Delivered a MERN-stack portal for an ed-tech client, centralizing student project submissions and analytics; active users grew from 120 → 220 (+83%) after introducing interactive dashboards</li>
+              <li>Built secure React.js + Node.js/Express APIs with JWT authentication, validation middleware, and optimized routing logic, reducing backend and form errors by 45% while improving data integrity</li>
+              <li>Optimized front-end architecture with modular React hooks, lazy loading, and advanced caching techniques, improving load speed by 40% and deployment turnaround by 25%</li>
+            </ul>
+            <div class="timeline__tech">
+              <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>JWT</span><span>REST APIs</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-label reveal-up">Featured Work</div>
+      <h2 class="section-title reveal-up">Projects that<br/><span class="text-accent">make an impact.</span></h2>
+
+      <div class="projects__grid reveal-up">
+
+        <!-- 01 — F1 Prediction Market (FEATURED) -->
+        <div class="pcard pcard--featured" style="--card-accent:#e8002d">
+          <div class="pcard__header">
+            <span class="pcard__num">01</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">Full Stack</span>
+              <span class="pcard__tag">ML / AI</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">F1 Prediction Market</h3>
+          <p class="pcard__desc">Real-time F1 prediction market where users place and track predictions on race outcomes, driver standings, and championship probabilities — powered by live data feeds and ML-driven odds calculation.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>WebSocket</span><span>Machine Learning</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24/f1_prediction_market" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 02 — Task Tracker CLI -->
+        <div class="pcard" style="--card-accent:#00f5d4">
+          <div class="pcard__header">
+            <span class="pcard__num">02</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">CLI Tool</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Task Tracker CLI</h3>
+          <p class="pcard__desc">Powerful command-line task manager with project grouping, priority levels, due dates, and terminal-based progress visualization. Built for developers who live in the terminal.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>Click</span><span>SQLite</span><span>Rich</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 03 — Unit Converter -->
+        <div class="pcard" style="--card-accent:#6366f1">
+          <div class="pcard__header">
+            <span class="pcard__num">03</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">Full Stack</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Unit Converter</h3>
+          <p class="pcard__desc">Fast, comprehensive unit conversion tool supporting 100+ units across length, weight, temperature, currency, and more. Clean interface with real-time conversion and history tracking.</p>
+          <div class="pcard__tech">
+            <span>React</span><span>TypeScript</span><span>Node.js</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 04 — Sales GPT -->
+        <div class="pcard" style="--card-accent:#f59e0b">
+          <div class="pcard__header">
+            <span class="pcard__num">04</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">ML / AI</span>
+              <span class="pcard__tag">LLM</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Sales GPT</h3>
+          <p class="pcard__desc">AI-powered sales assistant leveraging LLMs to automate lead qualification, generate personalized outreach, and provide real-time conversation coaching for sales teams.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>LangChain</span><span>OpenAI</span><span>FastAPI</span><span>React</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 05 — F1 Vision -->
+        <div class="pcard" style="--card-accent:#ff6b35">
+          <div class="pcard__header">
+            <span class="pcard__num">05</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">Full Stack</span>
+              <span class="pcard__tag">ML / AI</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">F1 Vision</h3>
+          <p class="pcard__desc">F1 race intelligence platform with live telemetry ingestion, Gradient Boosting–based race outcome prediction, driver/team comparison analytics, and LLM-generated strategy insights.</p>
+          <div class="pcard__tech">
+            <span>FastAPI</span><span>Python</span><span>Next.js</span><span>Machine Learning</span><span>LLMs</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 06 — Early Diabetes Detection -->
+        <div class="pcard" style="--card-accent:#a855f7">
+          <div class="pcard__header">
+            <span class="pcard__num">06</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag pcard__tag--research">Published Research</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Early Diabetes Detection via ML</h3>
+          <p class="pcard__desc">Published in Atlantis Press (ICAAAI 2025). SVM-based diagnostic model achieving <strong style="color:var(--accent)">95% accuracy</strong> for early-stage diabetes prediction.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>SVM</span><span>Scikit-learn</span><span>Pandas</span><span>Matplotlib</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://www.atlantis-press.com/proceedings/icaaai-25" target="_blank" class="pcard__link">Read Paper <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 07 — Distributed Share Market -->
+        <div class="pcard" style="--card-accent:#3b82f6">
+          <div class="pcard__header">
+            <span class="pcard__num">07</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">Distributed Systems</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Distributed Share Market System</h3>
+          <p class="pcard__desc">Fault-tolerant replicated trading system using active replication, consensus protocols, and autonomous recovery for high availability under crash and Byzantine failures.</p>
+          <div class="pcard__tech">
+            <span>Java</span><span>UDP</span><span>Distributed Systems</span><span>Consensus Protocols</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 08 — Book My Show -->
+        <div class="pcard" style="--card-accent:#ef4444">
+          <div class="pcard__header">
+            <span class="pcard__num">08</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">Full Stack</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Online Movie Ticket Booking</h3>
+          <p class="pcard__desc">Full-stack ticket booking platform with user authentication, real-time interactive seat selection, simulated secure payments, and RESTful Spring Boot API backend.</p>
+          <div class="pcard__tech">
+            <span>React</span><span>Spring Boot</span><span>MySQL</span><span>Vercel</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://book-my-show-chi.vercel.app" target="_blank" class="pcard__link">Live Demo <span>↗</span></a>
+            <a href="https://github.com/ranayash24/book-my-show" target="_blank" class="pcard__link pcard__link--ghost">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 09 — BERT Sentiment -->
+        <div class="pcard" style="--card-accent:#8b5cf6">
+          <div class="pcard__header">
+            <span class="pcard__num">09</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">ML / AI</span>
+              <span class="pcard__tag">NLP</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">BERT Sentiment Analysis</h3>
+          <p class="pcard__desc">Fine-tuned BERT base model from Hugging Face for sentiment classification, served via Flask REST API. Full training pipeline in Jupyter notebook.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>BERT</span><span>Hugging Face</span><span>Flask</span><span>PyTorch</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24/bert_sentiment" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 10 — Book Recommendation -->
+        <div class="pcard" style="--card-accent:#10b981">
+          <div class="pcard__header">
+            <span class="pcard__num">10</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">ML / AI</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Book Recommendation System</h3>
+          <p class="pcard__desc">Recommendation engine using collaborative filtering and content-based techniques to suggest books based on user preferences and reading history.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Jupyter</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24/book_recommended_system" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 11 — Style Fusion -->
+        <div class="pcard" style="--card-accent:#ec4899">
+          <div class="pcard__header">
+            <span class="pcard__num">11</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">ML / AI</span>
+              <span class="pcard__tag">Deep Learning</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Style Fusion</h3>
+          <p class="pcard__desc">Neural style transfer project that blends artistic styles with content images using deep learning. Customizable style/content mixing with VGG-based feature extraction.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>Deep Learning</span><span>PyTorch</span><span>Jupyter</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24/style_fusion" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+        <!-- 12 — Text Summarizer -->
+        <div class="pcard" style="--card-accent:#f97316">
+          <div class="pcard__header">
+            <span class="pcard__num">12</span>
+            <div class="pcard__tags">
+              <span class="pcard__tag">ML / AI</span>
+              <span class="pcard__tag">NLP</span>
+            </div>
+          </div>
+          <h3 class="pcard__title">Text Summarizer</h3>
+          <p class="pcard__desc">NLP-based text summarization tool that generates concise summaries from long-form text using transformer-based and extractive summarization techniques.</p>
+          <div class="pcard__tech">
+            <span>Python</span><span>NLP</span><span>Transformers</span><span>Jupyter</span>
+          </div>
+          <div class="pcard__links">
+            <a href="https://github.com/ranayash24/Text_summarizer_project" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+          </div>
+          <div class="pcard__glow"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="stack" id="skills">
+    <div class="container">
+      <div class="section-label reveal-up">Technical Skills</div>
+      <h2 class="section-title reveal-up">Elite-level tools,<br/><span class="text-accent">mastered.</span></h2>
+
+      <div class="stack__categories">
+        <div class="stack__category reveal-up">
+          <div class="stack__category-header">
+            <span class="stack__category-icon">💻</span>
+            <h3>Languages</h3>
+          </div>
+          <div class="stack__skills">
+            <div class="skill-pill">Python</div>
+            <div class="skill-pill">Java</div>
+            <div class="skill-pill">JavaScript</div>
+            <div class="skill-pill">TypeScript</div>
+            <div class="skill-pill">SQL</div>
+            <div class="skill-pill">C</div>
+            <div class="skill-pill">HTML5</div>
+            <div class="skill-pill">CSS</div>
+          </div>
+        </div>
+        <div class="stack__category reveal-up" style="--delay:0.1s">
+          <div class="stack__category-header">
+            <span class="stack__category-icon">🖥️</span>
+            <h3>Frameworks & Libraries</h3>
+          </div>
+          <div class="stack__skills">
+            <div class="skill-pill">FastAPI</div>
+            <div class="skill-pill">Spring Boot</div>
+            <div class="skill-pill">React</div>
+            <div class="skill-pill">Next.js</div>
+            <div class="skill-pill">Node.js</div>
+            <div class="skill-pill">Flask</div>
+            <div class="skill-pill">Express</div>
+            <div class="skill-pill">React Native</div>
+          </div>
+        </div>
+        <div class="stack__category reveal-up" style="--delay:0.2s">
+          <div class="stack__category-header">
+            <span class="stack__category-icon">🤖</span>
+            <h3>Machine Learning & AI</h3>
+          </div>
+          <div class="stack__skills">
+            <div class="skill-pill">Scikit-learn</div>
+            <div class="skill-pill">TensorFlow</div>
+            <div class="skill-pill">PyTorch</div>
+            <div class="skill-pill">XGBoost</div>
+            <div class="skill-pill">LSTM</div>
+            <div class="skill-pill">LangChain</div>
+            <div class="skill-pill">Pandas</div>
+            <div class="skill-pill">NumPy</div>
+            <div class="skill-pill">BERT</div>
+            <div class="skill-pill">Hugging Face</div>
+            <div class="skill-pill">Matplotlib</div>
+            <div class="skill-pill">Seaborn</div>
+          </div>
+        </div>
+        <div class="stack__category reveal-up" style="--delay:0.3s">
+          <div class="stack__category-header">
+            <span class="stack__category-icon">☁️</span>
+            <h3>Cloud / DevOps / Tools</h3>
+          </div>
+          <div class="stack__skills">
+            <div class="skill-pill">AWS</div>
+            <div class="skill-pill">Azure</div>
+            <div class="skill-pill">Google Cloud</div>
+            <div class="skill-pill">Docker</div>
+            <div class="skill-pill">Git</div>
+            <div class="skill-pill">Jira</div>
+            <div class="skill-pill">Postman</div>
+            <div class="skill-pill">Power BI</div>
+            <div class="skill-pill">Vercel</div>
+            <div class="skill-pill">Streamlit</div>
+          </div>
+        </div>
+        <div class="stack__category reveal-up" style="--delay:0.4s">
+          <div class="stack__category-header">
+            <span class="stack__category-icon">🗄️</span>
+            <h3>Databases</h3>
+          </div>
+          <div class="stack__skills">
+            <div class="skill-pill">MySQL</div>
+            <div class="skill-pill">PostgreSQL</div>
+            <div class="skill-pill">MongoDB</div>
+            <div class="skill-pill">Firebase</div>
+            <div class="skill-pill">Supabase</div>
+            <div class="skill-pill">Prisma</div>
+          </div>
+        </div>
+        <div class="stack__category reveal-up" style="--delay:0.5s">
+          <div class="stack__category-header">
+            <span class="stack__category-icon">🧠</span>
+            <h3>Expertise Areas</h3>
+          </div>
+          <div class="stack__skills">
+            <div class="skill-pill">Distributed Systems</div>
+            <div class="skill-pill">API Design</div>
+            <div class="skill-pill">Data Visualization</div>
+            <div class="skill-pill">Time-Series Forecasting</div>
+            <div class="skill-pill">LLM Integration</div>
+            <div class="skill-pill">NLP</div>
+            <div class="skill-pill">Neural Style Transfer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PUBLICATIONS ===================== -->
+  <section class="publications" id="publications">
+    <div class="container">
+      <div class="section-label reveal-up">Research</div>
+      <h2 class="section-title reveal-up">Published work<br/><span class="text-accent">& achievements.</span></h2>
+
+      <div class="pub-card reveal-up">
+        <div class="pub-card__badge">📄 Published Paper</div>
+        <h3 class="pub-card__title">"Early Detection of Diabetes using Machine Learning"</h3>
+        <p class="pub-card__venue">
+          Atlantis Press — Proceedings of the International Conference on Advances and Applications in Artificial Intelligence (ICAAAI 2025)
+        </p>
+        <p class="pub-card__desc">
+          Presents an SVM-based diagnostic model achieving 95% accuracy for early-stage diabetes prediction. Explores feature engineering on clinical datasets and validates the model against baseline classifiers including Random Forest, KNN, and Logistic Regression.
+        </p>
+        <div class="pub-card__stats">
+          <div class="pub-stat"><strong>95%</strong><span>Model Accuracy</span></div>
+          <div class="pub-stat"><strong>SVM</strong><span>Primary Algorithm</span></div>
+          <div class="pub-stat"><strong>ICAAAI 2025</strong><span>Conference</span></div>
+        </div>
+        <a href="https://www.atlantis-press.com/proceedings/icaaai-25" target="_blank" class="btn btn--primary" style="margin-top:0.5rem;">Read Paper ↗</a>
+      </div>
+
+      <!-- Achievements -->
+      <div class="achievements-row reveal-up">
+        <div class="ach-card">
+          <div class="ach-card__icon">🏆</div>
+          <h4>SSIP Hackathon 2022</h4>
+          <p>Finalist — State-level innovation competition</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-card__icon">📄</div>
+          <h4>Published Researcher</h4>
+          <p>Atlantis Press — ICAAAI 2025 Proceedings</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-card__icon">⬡</div>
+          <h4>GitHub Pull Shark</h4>
+          <p>Achievement badge · 39 public repositories</p>
+        </div>
+        <div class="ach-card">
+          <div class="ach-card__icon">🎓</div>
+          <h4>Concordia University</h4>
+          <p>Master of Applied Computer Science · 2024–2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Numbers Section -->
+  <div class="marquee-banner marquee-banner--reverse">
+    <div class="marquee-track marquee-track--reverse">
+      <span>AWS Cloud</span><span class="marquee-dot">✦</span>
+      <span>Azure Cognitive Services</span><span class="marquee-dot">✦</span>
+      <span>Published in Atlantis Press</span><span class="marquee-dot">✦</span>
+      <span>SSIP Hackathon Finalist</span><span class="marquee-dot">✦</span>
+      <span>GitHub Pull Shark</span><span class="marquee-dot">✦</span>
+      <span>Concordia University</span><span class="marquee-dot">✦</span>
+      <span>39 Public Repos</span><span class="marquee-dot">✦</span>
+      <span>AWS Cloud</span><span class="marquee-dot">✦</span>
+      <span>Azure Cognitive Services</span><span class="marquee-dot">✦</span>
+      <span>Published in Atlantis Press</span><span class="marquee-dot">✦</span>
+      <span>SSIP Hackathon Finalist</span><span class="marquee-dot">✦</span>
+      <span>GitHub Pull Shark</span><span class="marquee-dot">✦</span>
+      <span>Concordia University</span><span class="marquee-dot">✦</span>
+      <span>39 Public Repos</span><span class="marquee-dot">✦</span>
+    </div>
+  </div>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__left">
+          <div class="section-label reveal-up">Contact</div>
+          <h2 class="contact__title reveal-up">
+            Let's build<br/>
+            <span class="text-accent">something great.</span>
+          </h2>
+          <p class="contact__text reveal-up">
+            Whether you're hiring, collaborating on research, or need an ML/full-stack system built — I'd love to connect.
+          </p>
+          <div class="contact__links reveal-up">
+            <a href="mailto:yashrana2402@gmail.com" class="contact__social">
+              <span class="contact__social-icon">✉</span>
+              <span>yashrana2402@gmail.com</span>
+            </a>
+            <a href="https://github.com/ranayash24" target="_blank" class="contact__social">
+              <span class="contact__social-icon">⬡</span>
+              <span>github.com/ranayash24</span>
+            </a>
+            <a href="https://linkedin.com/in/yash-rana" target="_blank" class="contact__social">
+              <span class="contact__social-icon">in</span>
+              <span>linkedin.com/in/yash-rana</span>
+            </a>
+            <div class="contact__social contact__social--location">
+              <span class="contact__social-icon">📍</span>
+              <span>Montréal, QC, Canada</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact__right reveal-up">
+          <form class="contact__form" id="contactForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              <span>Send Message</span>
+              <span class="btn__arrow">→</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__logo">YR</div>
+        <div class="footer__tagline">Software Developer · Data Scientist · ML Engineer</div>
+      </div>
+      <div class="footer__nav">
+        <a href="https://github.com/ranayash24" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/yash-rana" target="_blank">LinkedIn</a>
+        <a href="mailto:yashrana2402@gmail.com">Email</a>
+        <a href="#hero">Back to Top ↑</a>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 Yash Rana. All rights reserved.</span>
+        <span>Designed & Built by Yash Rana</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
