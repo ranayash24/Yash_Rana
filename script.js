@@ -2,10 +2,11 @@
    LENIS SMOOTH SCROLL
 =========================== */
 const lenis = new Lenis({
-  duration: 1.2,
+  duration: 0.9,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  wheelMultiplier: 1,
-  touchMultiplier: 2,
+  wheelMultiplier: 1.2,
+  touchMultiplier: 1.5,
+  smoothTouch: false,
 });
 
 function rafLoop(time) {
@@ -417,11 +418,11 @@ document.querySelectorAll('.stack__category').forEach((category, ci) => {
 /* ===========================
    PARALLAX HERO TITLE
 =========================== */
+const heroContent = document.querySelector('.hero__content');
 lenis.on('scroll', ({ scroll }) => {
-  const heroContent = document.querySelector('.hero__content');
-  if (heroContent) {
-    heroContent.style.transform = `translateY(${scroll * 0.25}px)`;
-    heroContent.style.opacity = 1 - scroll / window.innerHeight;
+  if (heroContent && scroll < window.innerHeight) {
+    heroContent.style.transform = `translateY(${scroll * 0.12}px)`;
+    heroContent.style.opacity = Math.max(0, 1 - (scroll / window.innerHeight) * 1.5);
   }
 });
 
