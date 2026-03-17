@@ -53,22 +53,43 @@ body::after {
 }
 
 /* ─────────────────────────────────────
-   MIX-BLEND CURSOR  (LN4 signature)
+   CURSOR  (original orange dot + ring)
 ───────────────────────────────────── */
-.cursor-blob {
-  width: 32px;
-  height: 32px;
-  background: #fff;
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
   border-radius: 50%;
   position: fixed;
   top: 0; left: 0;
   pointer-events: none;
   z-index: 99999;
-  mix-blend-mode: difference;
-  transition: width 0.25s var(--ease), height 0.25s var(--ease);
   will-change: transform;
+  transition: width 0.2s var(--ease), height 0.2s var(--ease), background 0.2s;
 }
-.cursor-blob.is-hover { width: 72px; height: 72px; }
+.cursor-dot.dot-hover {
+  width: 14px;
+  height: 14px;
+}
+
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform;
+  opacity: 0.6;
+  transition: width 0.3s var(--ease), height 0.3s var(--ease), opacity 0.3s;
+}
+.cursor-ring.ring-hover {
+  width: 52px;
+  height: 52px;
+  opacity: 0.3;
+}
 
 /* ─────────────────────────────────────
    SCROLL PROGRESS
