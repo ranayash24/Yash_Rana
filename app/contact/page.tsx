@@ -6,6 +6,12 @@ import { useState } from "react";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+function encode(data: Record<string, string>) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+}
+
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>("idle");
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
@@ -19,26 +25,16 @@ export default function ContactPage() {
     setStatus("sending");
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/yashrana240203@gmail.com", {
+      const res = await fetch("/", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          subject: form.subject || `Portfolio contact from ${form.name}`,
-          message: form.message,
-          _subject: `[Portfolio] ${form.subject || `Message from ${form.name}`}`,
-          _captcha: "false",
-          _template: "table",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...form,
         }),
       });
 
-      const data = await res.json();
-
-      if (data.success === "true" || data.success === true) {
+      if (res.ok) {
         setStatus("sent");
         setForm({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setStatus("idle"), 6000);
@@ -145,7 +141,16 @@ export default function ContactPage() {
                 </p>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                onSubmit={handleSubmit}
+                name="contact"
+                data-netlify="true"
+                data-netlify-honeypot="bot-field"
+                className="space-y-4"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-white/30 text-[11px] font-mono uppercase tracking-wider mb-1.5">
