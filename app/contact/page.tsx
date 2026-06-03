@@ -86,7 +86,7 @@ export default function ContactPage() {
               {[
                 { icon: "✉", label: "yashrana240203@gmail.com", href: "mailto:yashrana240203@gmail.com" },
                 { icon: "⬡", label: "github.com/ranayash24", href: "https://github.com/ranayash24" },
-                { icon: "in", label: "linkedin.com/in/yash-rana", href: "https://www.linkedin.com/in/yash-rana" },
+                { icon: "in", label: "linkedin.com/in/yash--rana", href: "https://www.linkedin.com/in/yash--rana" },
                 { icon: "📍", label: "Montréal, QC, Canada", href: null },
               ].map(({ icon, label, href }, i) => {
                 const inner = (
