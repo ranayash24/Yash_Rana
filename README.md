@@ -1,72 +1,100 @@
-# Yash Rana — Personal Portfolio
+# Yash Rana — Portfolio
 
-My personal portfolio website built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools — just clean, handcrafted code.
+Personal portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion.
 
-**Live at:** [yashrana.dev](https://yashrana.dev) *(or your deployed URL)*
+**Live at:** [yashrana.dev](https://yashrana.dev)
 
 ---
 
 ## Tech Stack
 
-- **HTML5** — Semantic structure
-- **CSS3** — Custom properties, grid, flexbox, keyframe animations
-- **Vanilla JS (ES6+)** — No frameworks
-- **Lenis** — Smooth scroll
-- **Google Fonts** — Space Grotesk + Space Mono
+- **Next.js 14** — App Router, file-based routing
+- **TypeScript** — End to end type safety
+- **Tailwind CSS** — Utility-first styling
+- **Framer Motion** — Animations and transitions
+- **lucide-react + react-icons** — Icon libraries
+- **FormSubmit** — Contact form delivery
+- **Inter + JetBrains Mono** — Typography
 
 ## Features
 
-- Smooth scroll powered by Lenis
-- Custom animated cursor
-- Interactive particle + grid mesh canvas on hero
-- Scroll-triggered reveal animations
-- Project card grid with mouse-tracked glow effects
-- Typing animation (role switcher)
-- Animated stats counters
-- Timeline-based experience section
-- Responsive on all screen sizes
+- Loading screen with animated word cycling and progress bar
+- Command palette navigation (Cmd+K) with fuzzy search
+- Hero with letter-by-letter name animation and cycling role titles
+- Custom cursor with orbiting dots and magnetic pull effect
+- Embedded space shooter game on the homepage
+- Animated gradient mesh background
+- 3D tilt project cards with mouse-tracked glow
+- Fully responsive across all screen sizes
+- Contact form sends directly to email via FormSubmit
 
-## Projects Showcased
+## Pages
 
-1. F1 Prediction Market
-2. Task Tracker CLI
-3. Unit Converter
-4. Sales GPT
-5. F1 Vision
-6. Early Diabetes Detection (Published — ICAAAI 2025)
-7. Distributed Share Market System
-8. Online Movie Ticket Booking
-9. BERT Sentiment Analysis
-10. Book Recommendation System
-11. Style Fusion
-12. Text Summarizer
+| Route | Content |
+|---|---|
+| `/` | Hero + space shooter game |
+| `/about` | Bio, education, full skills grid |
+| `/experience` | 3 internships with expandable detail |
+| `/projects` | 14 projects with tilt cards |
+| `/research` | Published paper + achievements |
+| `/contact` | Contact form + social links |
+
+## Projects
+
+1. Redline Markets — F1 prediction market (Next.js, Spring Boot, Firebase)
+2. F1 Vision — Race intelligence platform (FastAPI, ML, LLMs)
+3. Chess Application & Engine — Minimax + Alpha-Beta pruning
+4. F1 Prediction Market — Real-time odds (FastAPI, WebSocket)
+5. Early Diabetes Detection — Published ICAAAI 2025 (SVM, 95% accuracy)
+6. Distributed Share Market System — Fault-tolerant (Java, UDP)
+7. Online Movie Ticket Booking — Full-stack (React, Spring Boot)
+8. Sales GPT — AI sales assistant (LangChain, OpenAI)
+9. BERT Sentiment Analysis — Fine-tuned NLP (PyTorch, Flask)
+10. Book Recommendation System — Collaborative filtering
+11. Style Fusion — Neural style transfer (PyTorch, VGG)
+12. Text Summarizer — Transformer-based NLP
+13. Task Tracker CLI — Terminal task manager (Python, Click)
+14. Unit Converter — 100+ units (React, TypeScript)
 
 ## Running Locally
-
-No build step needed — just open `index.html` in a browser:
 
 ```bash
 git clone https://github.com/ranayash24/Yash_Rana.git
 cd Yash_Rana
-open index.html
+npm install
+npm run dev
 ```
 
-Or use any static server:
-
-```bash
-npx serve .
-```
+Open [http://localhost:3000](http://localhost:3000)
 
 ## Structure
 
 ```
 .
-├── index.html      # All HTML
-├── style.css       # All styles
-├── script.js       # All JavaScript
-└── README.md
+├── app/
+│   ├── page.tsx              # Home — hero + game
+│   ├── about/page.tsx
+│   ├── experience/page.tsx
+│   ├── projects/page.tsx
+│   ├── research/page.tsx
+│   ├── contact/page.tsx
+│   └── api/contact/route.ts
+├── components/
+│   ├── app-wrapper.tsx
+│   ├── hero-section.tsx
+│   ├── navigation.tsx
+│   ├── loading-screen.tsx
+│   ├── mouse-effects.tsx
+│   ├── space-shooter-game.tsx
+│   └── providers/
+├── lib/
+│   ├── utils.ts
+│   └── haptic-manager.ts
+└── public/
+    ├── resume.pdf
+    └── profile.jpg
 ```
 
 ---
 
-Built by **Yash Rana** — [LinkedIn](https://linkedin.com/in/yash-rana) · [GitHub](https://github.com/ranayash24)
+Built by **Yash Rana** · [LinkedIn](https://www.linkedin.com/in/yash-rana) · [GitHub](https://github.com/ranayash24) · [Email](mailto:yashrana240203@gmail.com)
