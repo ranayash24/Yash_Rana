@@ -1,32 +1,25 @@
-import Cursor from '@/components/Cursor'
-import ScrollBar from '@/components/ScrollBar'
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import MarqueeBanner from '@/components/MarqueeBanner'
-import About from '@/components/About'
-import Experience from '@/components/Experience'
-import Projects from '@/components/Projects'
-import Skills from '@/components/Skills'
-import Research from '@/components/Research'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
+"use client";
+
+import { useState, lazy, Suspense } from "react";
+import { HeroSection } from "@/components/hero-section";
+
+const SpaceShooterGame = lazy(() =>
+  import("@/components/space-shooter-game").then((mod) => ({ default: mod.SpaceShooterGame }))
+);
+
+type GameStatus = "idle" | "running" | "over";
 
 export default function Home() {
+  const [gameStatus, setGameStatus] = useState<GameStatus>("idle");
+
   return (
-    <main className="relative">
-      <Cursor />
-      <ScrollBar />
-      <Navbar />
-      <Hero />
-      <MarqueeBanner direction="left" items={['Full Stack Development', 'Machine Learning', 'Data Science', 'LLM Integration', 'NLP & Transformers', 'Distributed Systems', 'Cloud Architecture', 'Published Researcher']} />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <MarqueeBanner direction="right" items={['AWS Cloud', 'Azure Cognitive Services', 'Published in Atlantis Press', 'SSIP Hackathon Finalist', 'GitHub Pull Shark', 'Concordia University', '39 Public Repos', 'Open to Work']} />
-      <Research />
-      <Contact />
-      <Footer />
-    </main>
-  )
+    <div className="relative">
+      <HeroSection gameActive={gameStatus === "running"} />
+      <div className="hidden md:block">
+        <Suspense fallback={null}>
+          <SpaceShooterGame onStatusChange={setGameStatus} />
+        </Suspense>
+      </div>
+    </div>
+  );
 }

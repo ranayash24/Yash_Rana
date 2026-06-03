@@ -9,14 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.2.29",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "@emailjs/browser": "^4.4.1",
+    "@llamaindex/openai": "^0.4.22",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.15.0",
     "lenis": "^1.1.14",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^2.5.5",
-    "@emailjs/browser": "^4.4.1"
+    "llamaindex": "^0.12.1",
+    "lucide-react": "^1.17.0",
+    "next": "14.2.29",
+    "openai": "^6.34.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.6.0",
+    "tailwind-merge": "^2.5.5"
   },
   "devDependencies": {
     "@types/node": "^20",

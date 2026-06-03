@@ -16,8 +16,8 @@ const config: Config = {
         'accent-2': '#ff9a00',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        mono: ['var(--font-mono)', 'monospace'],
+        sans: ['var(--font-geist-sans)', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-geist-mono)', 'monospace'],
       },
       animation: {
         grain: 'grain 8s steps(10) infinite',
