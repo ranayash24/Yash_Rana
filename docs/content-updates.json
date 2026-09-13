@@ -1,0 +1,83 @@
+{
+  "resumeSource": "Yash_Rana_ML_RESUME_v3.pdf",
+  "resumeSha256": "9be23ca3394a889916fc1c3cea2dbca919832076cf243a46feda8f458e70d310",
+  "previousResume": "public/resume-software-development.pdf",
+  "projectUpdates": {
+    "12": {
+      "title": "Abstractive Text Summarization",
+      "slug": "text-summarizer",
+      "desc": "Modular transformer-based summarization for long, unstructured documents, with separate ingestion, preprocessing, model inference, and evaluation stages for reproducible runs.",
+      "tech": [
+        "Python",
+        "Transformers",
+        "NLP",
+        "Hugging Face"
+      ],
+      "source": "Yash_Rana_ML_RESUME_v3.pdf; https://github.com/ranayash24/Text_summarizer_project",
+      "reason": "Updated résumé clarifies abstractive summarization; keep the existing /projects/text-summarizer URL."
+    },
+    "13": {
+      "desc": "Java command-line task manager with task creation, updates, deletion, status transitions, and filtering. Tasks persist in a JSON file with timestamps, with validation for invalid commands and missing inputs.",
+      "tech": [
+        "Java",
+        "CLI",
+        "JSON",
+        "File I/O"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/Task_Tracker_CLI"
+        }
+      ],
+      "source": "https://github.com/ranayash24/Task_Tracker_CLI",
+      "reason": "Repository confirms Java and JSON storage; previous Python/Click/SQLite description did not match the public source."
+    },
+    "14": {
+      "desc": "Full-stack converter for length, weight, and temperature, with a React interface, light/dark themes, and a Spring Boot JSON REST API using enum-based conversions and temperature formulas.",
+      "tech": [
+        "React",
+        "JavaScript",
+        "Java",
+        "Spring Boot",
+        "Vite",
+        "REST APIs"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/unit-converter"
+        }
+      ],
+      "source": "https://github.com/ranayash24/unit-converter",
+      "reason": "Repository confirms Spring Boot + React and three conversion categories; unsupported 100+ units/currency/history claims corrected."
+    },
+    "03": {
+      "desc": "Playable C++17 chess engine with an SDL2 interface, legal move generation, castling, en passant, and promotion. Its threaded AI combines iterative deepening, alpha-beta pruning, quiescence search, transposition caching, and move ordering.",
+      "tech": [
+        "C++17",
+        "SDL2",
+        "CMake",
+        "Minimax",
+        "Alpha-Beta Pruning",
+        "Iterative Deepening"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/Chess_Engine"
+        }
+      ],
+      "source": "https://github.com/ranayash24/Chess_Engine",
+      "reason": "Public C++ implementation supersedes the previous Python engine description; the earlier Python exploration is retained in case-study context."
+    }
+  },
+  "newProjectIds": [
+    "15",
+    "16",
+    "17",
+    "18",
+    "19"
+  ],
+  "currentEmployer": "GEXEL Telecom International"
+}

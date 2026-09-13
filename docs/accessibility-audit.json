@@ -1,0 +1,38 @@
+[
+  {
+    "name": "/",
+    "violations": []
+  },
+  {
+    "name": "/about",
+    "violations": []
+  },
+  {
+    "name": "/experience",
+    "violations": []
+  },
+  {
+    "name": "/projects",
+    "violations": []
+  },
+  {
+    "name": "/research",
+    "violations": []
+  },
+  {
+    "name": "/contact",
+    "violations": []
+  },
+  {
+    "name": "/projects/video-scene-intelligence",
+    "violations": []
+  },
+  {
+    "name": "mobile navigation",
+    "violations": []
+  },
+  {
+    "name": "mobile chatbot",
+    "violations": []
+  }
+]

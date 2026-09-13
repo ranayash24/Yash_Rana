@@ -19,9 +19,17 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const startTimeRef = useRef<number | null>(null);
 
   useEffect(() => {
+    let seen = false;
+    try {
+      seen = sessionStorage.getItem('portfolio-intro-seen') === '1';
+      sessionStorage.setItem('portfolio-intro-seen', '1');
+    } catch { /* The introduction still works when browser storage is unavailable. */ }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || seen) {
+      onComplete(); return;
+    }
     document.body.style.overflow = "hidden";
 
-    const wordDisplayDuration = 600;
+    const wordDisplayDuration = 140;
     const blackScreenDelay = 200;
     const duration = loadingWords.length * wordDisplayDuration + blackScreenDelay;
 
@@ -71,12 +79,12 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.2 }}
-          className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden bg-black"
+          className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-black"
         >
           <div className="absolute inset-0 flex items-center justify-center">
             <AnimatePresence mode="wait">
               {!showBlackScreen && (
-                <motion.h1
+                <motion.p
                   key={currentWordIndex}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -85,7 +93,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
                   className="w-full text-center text-4xl font-light tracking-wider text-white md:text-8xl"
                 >
                   {loadingWords[currentWordIndex]}
-                </motion.h1>
+                </motion.p>
               )}
             </AnimatePresence>
           </div>

@@ -1,17 +1,24 @@
 "use client";
 
-import { useState, useEffect, lazy, Suspense } from "react";
+import { useState, useEffect, useCallback, lazy, Suspense } from "react";
 import { LoadingScreen } from "@/components/loading-screen";
 import { Navigation } from "@/components/navigation";
 import { MotionProvider } from "@/components/providers/motion-provider";
 
+import { SiteFooter } from "@/components/site-footer";
+import Chatbot from "@/components/Chatbot";
+import ScrollBar from "@/components/ScrollBar";
+
 const MouseEffects = lazy(() =>
-  import("@/components/mouse-effects").then((mod) => ({ default: mod.MouseEffects }))
+  import("@/components/mouse-effects").then((mod) => ({
+    default: mod.MouseEffects,
+  })),
 );
 
 export function AppWrapper({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
   const [showMouseEffects, setShowMouseEffects] = useState(false);
+  const finishLoading = useCallback(() => setIsLoading(false), []);
 
   useEffect(() => {
     if (!isLoading) {
@@ -22,20 +29,26 @@ export function AppWrapper({ children }: { children: React.ReactNode }) {
 
   return (
     <MotionProvider>
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      {showMouseEffects && typeof window !== "undefined" &&
-        window.matchMedia("(min-width: 768px)").matches && (
+      {isLoading && <LoadingScreen onComplete={finishLoading} />}
+      {showMouseEffects &&
+        typeof window !== "undefined" &&
+        window.matchMedia(
+          "(min-width: 768px) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
+        ).matches && (
           <Suspense fallback={null}>
             <div className="hidden md:block">
               <MouseEffects />
             </div>
           </Suspense>
         )}
-      <div className="flex min-h-dvh flex-col bg-black text-white">
-        {!isLoading && <Navigation />}
-        <main id="main-content" className="flex-1 w-full">
+      <div className="portfolio-shell flex min-h-dvh flex-col">
+        <Navigation />
+        <ScrollBar />
+        <main id="main-content" tabIndex={-1} className="flex-1 w-full">
           {children}
         </main>
+        <SiteFooter />
+        <Chatbot />
       </div>
     </MotionProvider>
   );

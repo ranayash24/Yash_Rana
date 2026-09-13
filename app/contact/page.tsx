@@ -1,55 +1,64 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { staggerContainer, staggerItem } from "@/components/providers/motion-provider";
-import { useState } from "react";
+import {
+  staggerContainer,
+  staggerItem,
+} from "@/components/providers/motion-provider";
+import { useRef, useState } from "react";
+import {
+  contactEmail,
+  emailDeliveryConfigured,
+  sendContactEmail,
+} from "@/lib/contact";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
-function encode(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-}
-
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>("idle");
-  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const sending = useRef(false);
+  const directEmail = `mailto:${contactEmail}?subject=${encodeURIComponent(form.subject || "Portfolio enquiry")}&body=${encodeURIComponent(`${form.message}\n\nFrom: ${form.name}\nEmail: ${form.email}`)}`;
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (sending.current || !emailDeliveryConfigured) return;
+    if (!form.name.trim() || !form.message.trim()) {
+      setStatus("error");
+      return;
+    }
+    if (new FormData(e.currentTarget).get("bot-field")) {
+      setStatus("error");
+      return;
+    }
+    sending.current = true;
     setStatus("sending");
 
     try {
-      const res = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode({
-          "form-name": "contact",
-          ...form,
-        }),
-      });
-
-      if (res.ok) {
-        setStatus("sent");
-        setForm({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setStatus("idle"), 6000);
-      } else {
-        setStatus("error");
-        setTimeout(() => setStatus("idle"), 5000);
-      }
+      await sendContactEmail(form);
+      setStatus("sent");
+      setForm({ name: "", email: "", subject: "", message: "" });
     } catch {
       setStatus("error");
-      setTimeout(() => setStatus("idle"), 5000);
+    } finally {
+      sending.current = false;
     }
   };
 
   return (
-    <div className="min-h-screen bg-black pt-20">
+    <div className="interior-page min-h-screen pt-20">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16">
         <motion.div
           initial="initial"
@@ -57,7 +66,10 @@ export default function ContactPage() {
           variants={staggerContainer}
           className="mb-16"
         >
-          <motion.p variants={staggerItem} className="text-xs font-mono tracking-[0.2em] uppercase text-white/40 mb-4">
+          <motion.p
+            variants={staggerItem}
+            className="text-xs font-mono tracking-[0.2em] uppercase text-muted mb-4"
+          >
             06 — Contact
           </motion.p>
           <motion.h1
@@ -66,7 +78,7 @@ export default function ContactPage() {
           >
             Let&apos;s build
             <br />
-            <span className="text-white/20">something great.</span>
+            <span className="text-muted">something great.</span>
           </motion.h1>
         </motion.div>
 
@@ -77,30 +89,50 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-white/40 text-base leading-relaxed mb-10">
-              Open to full-time roles, research collaborations, and interesting builds.
-              Drop a message — I reply within 24 hours.
+            <p className="text-muted text-base leading-relaxed mb-10">
+              Currently at GEXEL and open to applied ML, generative AI, and
+              software engineering opportunities. Based in Montréal, open to
+              relocating to Toronto, and eligible to work in Canada (PGWP). Tell
+              me about the role, collaboration, or idea you have in mind.
             </p>
 
             <div className="space-y-2 mb-10">
               {[
-                { icon: "✉", label: "yashrana240203@gmail.com", href: "mailto:yashrana240203@gmail.com" },
-                { icon: "⬡", label: "github.com/ranayash24", href: "https://github.com/ranayash24" },
-                { icon: "in", label: "linkedin.com/in/yash--rana", href: "https://www.linkedin.com/in/yash--rana" },
+                {
+                  icon: "✉",
+                  label: "yashrana2402@gmail.com",
+                  href: "mailto:yashrana2402@gmail.com",
+                },
+                {
+                  icon: "⬡",
+                  label: "github.com/ranayash24",
+                  href: "https://github.com/ranayash24",
+                },
+                {
+                  icon: "in",
+                  label: "Connect on LinkedIn",
+                  href: "https://www.linkedin.com/in/yash-rana-a5b4b9214/",
+                },
                 { icon: "📍", label: "Montréal, QC, Canada", href: null },
               ].map(({ icon, label, href }, i) => {
                 const inner = (
-                  <div className="flex items-center gap-4 px-4 py-3 rounded-xl border border-white/8 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.05] transition-all group">
-                    <span className="w-8 h-8 rounded-full border border-white/12 flex items-center justify-center text-sm text-white/30 group-hover:text-white/60 transition-colors shrink-0">
+                  <div className="flex items-center gap-4 px-4 py-3 rounded-xl border border-white/10 bg-white/[0.02] hover:border-white/20 hover:bg-white/[0.05] transition-all group">
+                    <span className="w-8 h-8 rounded-full border border-white/12 flex items-center justify-center text-sm text-muted group-hover:text-white/60 transition-colors shrink-0">
                       {icon}
                     </span>
-                    <span className="text-white/40 text-sm font-mono group-hover:text-white/65 transition-colors">
+                    <span className="text-muted text-sm font-mono group-hover:text-white/65 transition-colors">
                       {label}
                     </span>
                   </div>
                 );
                 return href ? (
-                  <a key={i} href={href} target={href.startsWith("mailto") ? undefined : "_blank"} rel="noopener noreferrer" className="block">
+                  <a
+                    key={i}
+                    href={href}
+                    target={href.startsWith("mailto") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
                     {inner}
                   </a>
                 ) : (
@@ -115,6 +147,13 @@ export default function ContactPage() {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-white text-black font-semibold text-sm hover:bg-white/90 transition-all"
             >
               Download Resume ↓
+            </a>
+            <a
+              href="/resume-software-development.pdf"
+              download
+              className="text-link block mt-5"
+            >
+              Software development résumé ↗
             </a>
           </motion.div>
 
@@ -133,100 +172,167 @@ export default function ContactPage() {
                 <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/15 flex items-center justify-center text-2xl">
                   ✓
                 </div>
-                <h3 className="text-xl font-semibold text-white">Message sent</h3>
-                <p className="text-white/40 text-sm max-w-xs leading-relaxed">
-                  Your message is on its way to{" "}
-                  <span className="text-white/60 font-mono">yashrana240203@gmail.com</span>.
-                  Expect a reply within 24 hours.
+                <h3 role="status" className="text-xl font-semibold text-white">
+                  Message sent
+                </h3>
+                <p className="text-muted text-sm max-w-xs leading-relaxed">
+                  Thank you for getting in touch. Your message was accepted for
+                  sending.
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setStatus("idle")}
+                  className="text-link"
+                >
+                  Send another message →
+                </button>
               </motion.div>
             ) : (
               <form
                 onSubmit={handleSubmit}
                 name="contact"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
+                aria-busy={status === "sending"}
                 className="space-y-4"
               >
-                <input type="hidden" name="form-name" value="contact" />
+                {!emailDeliveryConfigured && (
+                  <p className="text-muted text-sm leading-relaxed">
+                    Write your message below, then open it in your email app to
+                    send it directly to me.
+                  </p>
+                )}
                 <input type="hidden" name="bot-field" />
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <fieldset disabled={status === "sending"} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        htmlFor="contact-name"
+                        className="block text-muted text-[11px] font-mono uppercase tracking-wider mb-1.5"
+                      >
+                        Name
+                      </label>
+                      <input
+                        id="contact-name"
+                        name="name"
+                        value={form.name}
+                        onChange={handleChange}
+                        placeholder="Your name"
+                        required
+                        maxLength={120}
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-muted text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="contact-email"
+                        className="block text-muted text-[11px] font-mono uppercase tracking-wider mb-1.5"
+                      >
+                        Email
+                      </label>
+                      <input
+                        id="contact-email"
+                        name="email"
+                        type="email"
+                        value={form.email}
+                        onChange={handleChange}
+                        placeholder="you@example.com"
+                        required
+                        maxLength={254}
+                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-muted text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none"
+                      />
+                    </div>
+                  </div>
+
                   <div>
-                    <label className="block text-white/30 text-[11px] font-mono uppercase tracking-wider mb-1.5">
-                      Name
+                    <label
+                      htmlFor="contact-subject"
+                      className="block text-muted text-[11px] font-mono uppercase tracking-wider mb-1.5"
+                    >
+                      Subject
                     </label>
                     <input
-                      name="name"
-                      value={form.name}
+                      id="contact-subject"
+                      name="subject"
+                      value={form.subject}
                       onChange={handleChange}
-                      placeholder="Your name"
-                      required
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none"
+                      placeholder="What's this about?"
+                      maxLength={200}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-muted text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none"
                     />
                   </div>
+
                   <div>
-                    <label className="block text-white/30 text-[11px] font-mono uppercase tracking-wider mb-1.5">
-                      Email
+                    <label
+                      htmlFor="contact-message"
+                      className="block text-muted text-[11px] font-mono uppercase tracking-wider mb-1.5"
+                    >
+                      Message
                     </label>
-                    <input
-                      name="email"
-                      type="email"
-                      value={form.email}
+                    <textarea
+                      id="contact-message"
+                      name="message"
+                      value={form.message}
                       onChange={handleChange}
-                      placeholder="you@example.com"
+                      rows={6}
+                      placeholder="Tell me about your project, role, or idea..."
                       required
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none"
+                      maxLength={10000}
+                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-muted text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none resize-none"
                     />
                   </div>
-                </div>
 
-                <div>
-                  <label className="block text-white/30 text-[11px] font-mono uppercase tracking-wider mb-1.5">
-                    Subject
-                  </label>
-                  <input
-                    name="subject"
-                    value={form.subject}
-                    onChange={handleChange}
-                    placeholder="What's this about?"
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none"
-                  />
-                </div>
+                  {emailDeliveryConfigured ? (
+                    <button
+                      aria-live="polite"
+                      type="submit"
+                      disabled={status === "sending"}
+                      className={`w-full py-4 rounded-xl text-sm font-semibold transition-all ${
+                        status === "error"
+                          ? "bg-red-500/15 border border-red-500/30 text-red-300"
+                          : "bg-white text-black hover:bg-white/90 disabled:opacity-50"
+                      }`}
+                    >
+                      {status === "sending"
+                        ? "Sending..."
+                        : status === "error"
+                          ? "Try again →"
+                          : "Send Message →"}
+                    </button>
+                  ) : (
+                    <a
+                      href={directEmail}
+                      className="block w-full py-4 rounded-xl text-sm font-semibold text-center bg-white text-black hover:bg-white/90 transition-all"
+                    >
+                      Open email app →
+                    </a>
+                  )}
+                </fieldset>
 
-                <div>
-                  <label className="block text-white/30 text-[11px] font-mono uppercase tracking-wider mb-1.5">
-                    Message
-                  </label>
-                  <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    rows={6}
-                    placeholder="Tell me about your project, role, or idea..."
-                    required
-                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-white/20 text-sm focus:border-white/25 focus:bg-white/[0.05] transition-all outline-none resize-none"
-                  />
-                </div>
+                {status === "error" && (
+                  <p
+                    role="alert"
+                    className="text-sm text-red-300 leading-relaxed"
+                  >
+                    We couldn&apos;t confirm that your message was sent. Your
+                    text is still here. Try again or{" "}
+                    <a
+                      href={directEmail}
+                      className="underline underline-offset-4"
+                    >
+                      open it in your email app
+                    </a>
+                    .
+                  </p>
+                )}
 
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className={`w-full py-4 rounded-xl text-sm font-semibold transition-all ${
-                    status === "error"
-                      ? "bg-red-500/15 border border-red-500/30 text-red-300"
-                      : "bg-white text-black hover:bg-white/90 disabled:opacity-50"
-                  }`}
-                >
-                  {status === "sending"
-                    ? "Sending..."
-                    : status === "error"
-                    ? "Failed — try emailing directly"
-                    : "Send Message →"}
-                </button>
-
-                <p className="text-center text-white/20 text-[11px] font-mono">
-                  Delivered to yashrana240203@gmail.com
+                <p className="text-center text-muted text-[11px] font-mono">
+                  Or email{" "}
+                  <a
+                    href={directEmail}
+                    className="underline underline-offset-4"
+                  >
+                    {contactEmail}
+                  </a>
                 </p>
               </form>
             )}

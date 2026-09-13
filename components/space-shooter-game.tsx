@@ -55,7 +55,7 @@ function saveScore(score: number) {
   const deduped = existing
     .sort((a, b) => b - a)
     .slice(0, 3);
-  window.localStorage.setItem(SCORE_STORAGE_KEY, JSON.stringify(deduped));
+  try { window.localStorage.setItem(SCORE_STORAGE_KEY, JSON.stringify(deduped)); } catch { /* Storage may be unavailable. */ }
 }
 
 type SpaceShooterGameProps = {
@@ -191,34 +191,13 @@ export function SpaceShooterGame({ onStatusChange }: SpaceShooterGameProps) {
   // Keyboard controls
   useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      // Explore panel open when command palette search input is in the DOM
-      const exploreSearchInput = document.querySelector('input[placeholder*="Search pages"]');
-      const isExploreOpen = !!exploreSearchInput;
-      
-      // Handle Escape key to quit game (always works, even if Explore is open)
-      if (e.key === "Escape" && gameStatusRef.current === "running") {
-        e.preventDefault();
-        quitGameRef.current?.();
-        return;
-      }
-      
-      // Only prevent default and handle game controls if Explore is not open
-      if (!isExploreOpen && ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " ", "Space", "w", "a", "s", "d", "q", "e"].includes(e.key)) {
-        e.preventDefault();
-      }
-      
-      if (!isExploreOpen) {
-        keysRef.current[e.key.toLowerCase()] = true;
-
-        if (e.key === " " || e.code === "Space") {
-          handleShoot();
-        }
-
-        // Don't start game if Explore is open
-        if ((gameStatusRef.current === "idle" || gameStatusRef.current === "over") && (e.key === "Enter" || e.code === "Space" || e.key.toLowerCase() === "w" || e.key.toLowerCase() === "a" || e.key.toLowerCase() === "s" || e.key.toLowerCase() === "d" || e.key === "ArrowUp" || e.key === "ArrowDown" || e.key === "ArrowLeft" || e.key === "ArrowRight" || e.key.toLowerCase() === "q" || e.key.toLowerCase() === "e")) {
-          startGame();
-        }
-      }
+      const target = e.target as HTMLElement;
+      if (target.closest('input, textarea, [contenteditable="true"], [role="dialog"] input')) return;
+      if (gameStatusRef.current !== 'running') return;
+      if (e.key === 'Escape') { e.preventDefault(); quitGameRef.current?.(); return; }
+      if (['ArrowUp','ArrowDown','ArrowLeft','ArrowRight',' ','w','a','s','d','q','e'].includes(e.key)) e.preventDefault();
+      keysRef.current[e.key.toLowerCase()] = true;
+      if (e.key === ' ' || e.code === 'Space') handleShoot();
     };
     const up = (e: KeyboardEvent) => {
       keysRef.current[e.key.toLowerCase()] = false;

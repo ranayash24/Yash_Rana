@@ -1,0 +1,82 @@
+{
+  "checkedAt": "2026-09-13T02:06:09.902Z",
+  "demos": [
+    {
+      "url": "https://redlinem.netlify.app/",
+      "error": "page.goto: Timeout 30000ms exceeded.",
+      "errors": []
+    },
+    {
+      "url": "https://second-project-delta.vercel.app/",
+      "status": 200,
+      "final": "https://second-project-delta.vercel.app/",
+      "title": "React App",
+      "text": "Surat\nSign in\nThe best of Entertainment\n Previous\n Next\nPremieres\n\nBrand new relases every friday\n\n Previous\nSpider-Man: Brand New Day\n\nCoyote vs. Acme\n\nThe Odyssey\n\nMutiny\n\n\uad70\uccb4\n\nMoana\n\nThe Mongoose\n\nMayday\n\nEnfrentados: Marfil\n\nThe Runner\n\nClash of the Thundermans\n\nHantu Dalam Sel\n\n\u611b\u306e\u306c\u304f\u3082\u308a\n\nObsession\n\nToy Story 5\n\nThe Last Sunrise\n\nLa captura\n\nRage of Stars\n\nMinions & Monsters\n\nBatman: Knightfall Part 1: Knightfall\n\n Next\nOnline Streaming events\n\n Previous\nAvatar Aang: The Last Airbender\n\nSwapped\n\nSocias por accidente\n\nLa captura\n\n\u5287\u5834\u7248\u300c\u9b3c\u6ec5\u306e\u5203\u300d\u7121\u9650\u57ce\u7de8 \u7b2c\u4e00\u7ae0 \u7317\u7aa9\u5ea7\u518d\u6765\n\nThe Shawshank Redemption\n\nThe Godfather\n\nMichael\n\nProject Hail Mary\n\nThe Godfather Part II\n\n12 Angry Men\n\nSchindler's List\n\nYoung Hearts\n\n\u5287\u5834\u7248 \u30c1\u30a7\u30f3\u30bd\u30fc\u30de\u30f3 \u30ec\u30bc\u7bc7\n\nThe Dark Knight\n\n\u5343\u3068\u5343\u5c0b\u306e\u795e\u96a0\u3057\n\nThe Green Mile\n\nThe Lord of the Rings: The Return of the King\n\n\u0926\u093f\u0932\u0935\u093e\u0932\u0947 \u0926\u0941\u0932\u094d\u0939\u0928\u093f\u092f\u093e \u0932\u0947 \u091c\u093e\u092f\u0947\u0902\u0917\u0947\n\n\uae30\uc0dd\ucda9\n\n Next\nOutdoor events\n\n Previous\nCoyote vs. Acme\n\nMutiny\n\n\uad70\uccb4\n\nThe Runner\n\nHantu Dalam Sel\n\nAbove & Below\n\nPinocchio: Unstrung\n\nBajo tus pies\n\nDisclosure Day\n\nPractical Magic 2\n\n\ud638\ud504\n\nFall 2: Deadpoint\n\nPAW Patrol: The Dino Movie\n\nLucky Strike\n\nAvengers: Endgame\n\nI Want Your Sex\n\nThe Dog Stars\n\nHot Spot\n\nRunner\n\nJust Play Dead\n\n Next",
+      "errors": []
+    },
+    {
+      "url": "https://book-my-show-chi.vercel.app/",
+      "status": 200,
+      "final": "https://book-my-show-chi.vercel.app/",
+      "title": "React App",
+      "text": "Surat\nSign in\nThe best of Entertainment\n Previous\n Next\nPremieres\n\nBrand new relases every friday\n\nOnline Streaming events\n\nOutdoor events",
+      "errors": [
+        "Request failed with status code 401",
+        "Request failed with status code 401",
+        "Request failed with status code 401",
+        "Request failed with status code 401"
+      ]
+    },
+    {
+      "url": "https://personal-wealth-dashboard-beryl.vercel.app/",
+      "status": 200,
+      "final": "https://personal-wealth-dashboard-beryl.vercel.app/",
+      "title": "WealthIQ - Personal Wealth Intelligence Dashboard",
+      "text": "WealthIQ\nSign In\nGet Started\nPhase 1 \u2014 Portfolio Intelligence\nYour Entire Wealth.\nOne Dashboard.\n\nStop juggling spreadsheets and multiple apps. WealthIQ unifies all your assets \u2014 stocks, real estate, crypto, retirement \u2014 into one intelligent, real-time view of your financial life.\n\nGet Started Free\nSign In\n10+\nAsset Classes Supported\nAES-256\nData Encryption\n< 5 min\nSetup Time\nEverything you need to master your wealth\n\nBuilt for serious investors who want clarity, not complexity.\n\nUnified Portfolio View\n\nSee your net worth in real-time across stocks, bonds, real estate, crypto, cash, and alternative investments \u2014 all in one place with beautiful visualizations.\n\nMulti-currency support\nAutomatic categorization\nHistorical tracking\nAI-Powered Risk Analysis\n\nUnderstand your portfolio's risk profile with intelligent analytics. Get alerts when concentration risk, drawdowns, or correlation issues need attention.\n\nConcentration alerts\nPerformance benchmarking\nTrend detection\nBank-Grade Security\n\nYour financial data is protected with AES-256 encryption at rest, secure JWT authentication, and optional two-factor authentication for peace of mind.\n\nAES-256 encryption\nJWT authentication\n2FA support (Phase 5)\nStart tracking your wealth today\n\nJoin thousands of investors who have already gained clarity on their financial future. Free to use. No credit card required.\n\nCreate Your Dashboard\n\n\u00a9 2026 WealthIQ. Your data, your control.",
+      "errors": []
+    }
+  ],
+  "apis": [
+    {
+      "name": "empty",
+      "status": 400,
+      "body": "{\"error\":\"Please enter a message of up to 4,000 characters\"}"
+    },
+    {
+      "name": "null",
+      "status": 500,
+      "body": "{\"error\":\"Failed to process query\"}"
+    },
+    {
+      "name": "malformed",
+      "status": 400,
+      "body": "{\"error\":\"Please enter a message of up to 4,000 characters\"}"
+    },
+    {
+      "name": "oversized",
+      "status": 400,
+      "body": "{\"error\":\"Please enter a message of up to 4,000 characters\"}"
+    }
+  ],
+  "email": {
+    "status": 400,
+    "response": "The template ID not found. To find this ID, visit https://dashboard.emailjs.com/admin/templates"
+  },
+  "liveChat": {
+    "status": 200,
+    "body": "{\"reply\":\"Yash\u2019s current employer is **GEXEL\u202fTelecom\u202fInternational** (Technical Specialist, Network & Connectivity).  \\nHis video\u2011AI project is **Video Scene Intelligence** \u2013 an asynchronous pipeline that transcribes audio, captions frames, fuses the two modalities, indexes them in Qdrant, and answers natural\u2011language queries with timestamped citations.\"}"
+  },
+  "redlineRecheck": {
+    "url": "https://redlinem.netlify.app/",
+    "status": 200,
+    "title": "Redline Markets | F1 Prediction Market",
+    "text": "Redline Markets\nHOME\nMARKETS\nMY BETS\nLEADERBOARD\nWALLET\nDOCS\nGP COINS\n0\nGP\nSIGN IN\n\n\u25cf LIVE\nF1 PREDICTION MARKET \u00b7 2026 SEASON\n\nTRADE\nTHE GRID.\n\nRedline Markets brings Polymarket energy to Formula 1. Buy YES/NO shares on qualifying, race winners, and safety car drama with GP Coins.\n\nSTART TRADING \u2192\nLEADERBOARD\nJoin the paddock\n\nEvery new trader gets 1,000 GP Coins to start.\n\nDISPLAY NAME\nEMAIL\nPASSWORD\nCLAIM 1,000 GP COINS\nOR CONTINUE WITH\nContinue with Google\nNEXT RACE\nChinese Grand Prix\nShanghai\n\u00b7\n2026-03-15\n\u00b7\n4 DAYS\n24\nRACE ROUNDS\n1K\nSTARTER COINS\nYES/NO\nSHARE TYPES\nLIVE\nMARKETS\n\nFEATURES\n\nWhy Redline?\n\nA fast, social market for every race weekend.\n\n01\nGP Coins Economy\n\nEvery new trader gets 1,000 GP Coins. Top up anytime with real money.\n\n02\nProbability Bars\n\nInstantly see how the paddock is leaning with live market splits.\n\n03\nSocial Leaderboard\n\nTrack who is climbing the grid before the lights go out.\n\n04\nLive Telemetry\n\nStreaming race data signals powering every market decision.\n\nDATA FEED\n\nLive Telemetry\n\nStreaming signal behind the market.\n\n\u25cf RECENT\nSimulated\nDEMO CIRCUIT\nGREEN FLAG\nSIMULATED\nPOS\nDRIVER\nTEAM\nGAP\nINTERVAL\n1\nVER\nVerstappen\nRed Bull Racing\nLEADER\n2\nLEC\nLeclerc\nFerrari\n+4.415s\n+1.872s\n3\nHAM\nHamilton\nMercedes\n+18.673s\n+1.638s\n4\nNOR\nNorris\nMcLaren\n+13.781s\n+1.867s\n5\nPIA\nPiastri\nMcLaren\n+19.100s\n+0.497s\n\nRACE CONTROL\n\nTrack is clear\n\nDRS enabled\n\nVia OpenF1 \u00b7 Updates every 10s \u00b7 10:20:36 PM\n\nGET STARTED\n\nHow it works\n\nThree steps to a podium finish.\n\n01\nSign in\n\nUse email, Google, Apple, or Facebook to join.\n\n02\nBuy Shares\n\nPick YES or NO shares on every race outcome.\n\n03\nTrack Results\n\nWatch your GP Coins grow and climb the leaderboard.\n\nPlay money only. Redline Markets is a demo experience.\nRedline AI",
+    "errors": [],
+    "failures": []
+  },
+  "finalBuildChat": {
+    "status": 200,
+    "reply": "Yash Rana currently works at GEXEL\u202fTelecom\u202fInternational, and his video\u2011AI project is the \u201cVideo\u202fScene\u202fIntelligence\u201d system that answers natural\u2011language queries about video content.",
+    "build": "Next.js 15.5.24 / React 19.3.0"
+  }
+}

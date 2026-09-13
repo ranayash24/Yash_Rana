@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security: CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; connect-src 'self' https://api.emailjs.com; frame-src 'none'; object-src 'none'; base-uri 'self';" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
   <title>Yash Rana — Software Developer & Data Scientist | Portfolio</title>
   <meta name="description" content="Portfolio of Yash Rana — Full Stack Developer, Data Scientist, and ML Engineer. Master's student at Concordia University, Montréal." />
   <meta name="keywords" content="Yash Rana, Software Developer, Data Scientist, Machine Learning Engineer, Concordia University, Full Stack Developer, Portfolio, Python, React, FastAPI" />
@@ -15,6 +19,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- Cinematic Loader -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__initials">YR</div>
+    <div class="loader__bar-wrap">
+      <div class="loader__bar-fill" id="loaderBar"></div>
+    </div>
+    <div class="loader__label">Loading Portfolio</div>
+  </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar"></div>
 
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
@@ -76,10 +92,10 @@
         <a href="Yash_Vianychandra_Rana.pdf" download="Yash_Rana_Resume.pdf" class="btn btn--outline">Download Resume ↓</a>
       </div>
       <div class="hero__socials reveal-up" style="--delay:0.55s">
-        <a href="https://github.com/ranayash24" target="_blank" class="hero__social-link" aria-label="GitHub">
+        <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         </a>
-        <a href="https://linkedin.com/in/yash-vinaychandra-rana" target="_blank" class="hero__social-link" aria-label="LinkedIn">
+        <a href="https://linkedin.com/in/yash-vinaychandra-rana" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
         <a href="mailto:yashrana2402@gmail.com" class="hero__social-link" aria-label="Email">
@@ -164,12 +180,13 @@
             </div>
           </div>
         </div>
-        <div class="about__right reveal-up">
+        <div class="about__right reveal-right">
           <div class="about__image-wrapper">
             <div class="about__image-frame">
               <div class="about__image-placeholder">
-                <img src="yash-photo.jpg" alt="Yash Rana" class="about__photo" />
+                <img src="yash-photo.jpg" alt="Yash Rana" class="about__photo" draggable="false" />
                 <div class="about__image-glow"></div>
+                <div class="about__image-protect" aria-hidden="true"></div>
               </div>
               <div class="about__image-badge">Open to Work</div>
             </div>
@@ -209,7 +226,7 @@
       <div class="timeline">
         <div class="timeline__line"></div>
 
-        <div class="timeline__item reveal-up">
+        <div class="timeline__item reveal-left">
           <div class="timeline__dot"></div>
           <div class="timeline__content">
             <div class="timeline__meta">
@@ -233,7 +250,7 @@
           </div>
         </div>
 
-        <div class="timeline__item reveal-up">
+        <div class="timeline__item reveal-left">
           <div class="timeline__dot"></div>
           <div class="timeline__content">
             <div class="timeline__meta">
@@ -267,7 +284,7 @@
       <div class="section-label reveal-up">Featured Work</div>
       <h2 class="section-title reveal-up">Projects that<br/><span class="text-accent">make an impact.</span></h2>
 
-      <div class="projects__grid reveal-up">
+      <div class="projects__grid">
 
         <!-- 01 — F1 Prediction Market (FEATURED) -->
         <div class="pcard pcard--featured" style="--card-accent:#e8002d">
@@ -284,13 +301,13 @@
             <span>Python</span><span>FastAPI</span><span>Next.js</span><span>PostgreSQL</span><span>WebSocket</span><span>Machine Learning</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24/f1_prediction_market" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24/f1_prediction_market" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
 
         <!-- 02 — Task Tracker CLI -->
-        <div class="pcard" style="--card-accent:#00f5d4">
+        <div class="pcard" style="--card-accent:#FF8C00">
           <div class="pcard__header">
             <span class="pcard__num">02</span>
             <div class="pcard__tags">
@@ -303,7 +320,7 @@
             <span>Python</span><span>Click</span><span>SQLite</span><span>Rich</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -322,7 +339,7 @@
             <span>React</span><span>TypeScript</span><span>Node.js</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -342,7 +359,7 @@
             <span>Python</span><span>LangChain</span><span>OpenAI</span><span>FastAPI</span><span>React</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -362,7 +379,7 @@
             <span>FastAPI</span><span>Python</span><span>Next.js</span><span>Machine Learning</span><span>LLMs</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -381,7 +398,7 @@
             <span>Python</span><span>SVM</span><span>Scikit-learn</span><span>Pandas</span><span>Matplotlib</span>
           </div>
           <div class="pcard__links">
-            <a href="https://www.atlantis-press.com/proceedings/icaaai-25" target="_blank" class="pcard__link">Read Paper <span>↗</span></a>
+            <a href="https://www.atlantis-press.com/proceedings/icaaai-25" target="_blank" rel="noopener noreferrer" class="pcard__link">Read Paper <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -400,7 +417,7 @@
             <span>Java</span><span>UDP</span><span>Distributed Systems</span><span>Consensus Protocols</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -419,8 +436,8 @@
             <span>React</span><span>Spring Boot</span><span>MySQL</span><span>Vercel</span>
           </div>
           <div class="pcard__links">
-            <a href="https://book-my-show-chi.vercel.app" target="_blank" class="pcard__link">Live Demo <span>↗</span></a>
-            <a href="https://github.com/ranayash24/book-my-show" target="_blank" class="pcard__link pcard__link--ghost">GitHub <span>↗</span></a>
+            <a href="https://book-my-show-chi.vercel.app" target="_blank" rel="noopener noreferrer" class="pcard__link">Live Demo <span>↗</span></a>
+            <a href="https://github.com/ranayash24/book-my-show" target="_blank" rel="noopener noreferrer" class="pcard__link pcard__link--ghost">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -440,7 +457,7 @@
             <span>Python</span><span>BERT</span><span>Hugging Face</span><span>Flask</span><span>PyTorch</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24/bert_sentiment" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24/bert_sentiment" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -459,7 +476,7 @@
             <span>Python</span><span>Pandas</span><span>Scikit-learn</span><span>Jupyter</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24/book_recommended_system" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24/book_recommended_system" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -479,7 +496,7 @@
             <span>Python</span><span>Deep Learning</span><span>PyTorch</span><span>Jupyter</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24/style_fusion" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24/style_fusion" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -499,7 +516,7 @@
             <span>Python</span><span>NLP</span><span>Transformers</span><span>Jupyter</span>
           </div>
           <div class="pcard__links">
-            <a href="https://github.com/ranayash24/Text_summarizer_project" target="_blank" class="pcard__link">GitHub <span>↗</span></a>
+            <a href="https://github.com/ranayash24/Text_summarizer_project" target="_blank" rel="noopener noreferrer" class="pcard__link">GitHub <span>↗</span></a>
           </div>
           <div class="pcard__glow"></div>
         </div>
@@ -624,7 +641,7 @@
       <div class="section-label reveal-up">Research</div>
       <h2 class="section-title reveal-up">Published work<br/><span class="text-accent">& achievements.</span></h2>
 
-      <div class="pub-card reveal-up">
+      <div class="pub-card reveal-blur">
         <div class="pub-card__badge">📄 Published Paper</div>
         <h3 class="pub-card__title">"Early Detection of Diabetes using Machine Learning"</h3>
         <p class="pub-card__venue">
@@ -638,7 +655,7 @@
           <div class="pub-stat"><strong>SVM</strong><span>Primary Algorithm</span></div>
           <div class="pub-stat"><strong>ICAAAI 2025</strong><span>Conference</span></div>
         </div>
-        <a href="https://www.atlantis-press.com/proceedings/icaaai-25" target="_blank" class="btn btn--primary" style="margin-top:0.5rem;">Read Paper ↗</a>
+        <a href="https://www.atlantis-press.com/proceedings/icaaai-25" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="margin-top:0.5rem;">Read Paper ↗</a>
       </div>
 
       <!-- Achievements -->
@@ -705,11 +722,11 @@
               <span class="contact__social-icon">✉</span>
               <span>yashrana2402@gmail.com</span>
             </a>
-            <a href="https://github.com/ranayash24" target="_blank" class="contact__social">
+            <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer" class="contact__social">
               <span class="contact__social-icon">⬡</span>
               <span>github.com/ranayash24</span>
             </a>
-            <a href="https://linkedin.com/in/yash-vinaychandra-rana" target="_blank" class="contact__social">
+            <a href="https://linkedin.com/in/yash-vinaychandra-rana" target="_blank" rel="noopener noreferrer" class="contact__social">
               <span class="contact__social-icon">in</span>
               <span>linkedin.com/in/yash-vinaychandra-rana</span>
             </a>
@@ -758,8 +775,8 @@
         <div class="footer__tagline">Software Developer · Data Scientist · ML Engineer</div>
       </div>
       <div class="footer__nav">
-        <a href="https://github.com/ranayash24" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/yash-vinaychandra-rana" target="_blank">LinkedIn</a>
+        <a href="https://github.com/ranayash24" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com/in/yash-vinaychandra-rana" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:yashrana2402@gmail.com">Email</a>
         <a href="#hero">Back to Top ↑</a>
       </div>
@@ -770,6 +787,8 @@
     </div>
   </footer>
 
+  <!-- EmailJS — after setup at https://emailjs.com, replace keys in script.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
   <script src="script.js"></script>
 </body>

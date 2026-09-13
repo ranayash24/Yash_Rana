@@ -15,3 +15,9 @@ out/
 # Misc
 .DS_Store
 *.pem
+
+# Deployment state and local build caches
+.netlify/
+*.tsbuildinfo
+.env.*
+!.env.example

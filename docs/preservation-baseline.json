@@ -1,0 +1,368 @@
+{
+  "routes": [
+    "/",
+    "/about",
+    "/experience",
+    "/projects",
+    "/research",
+    "/contact"
+  ],
+  "apis": [
+    "/api/contact",
+    "/api/chat"
+  ],
+  "projects": [
+    "Redline Markets",
+    "F1 Vision",
+    "Chess Application & Engine",
+    "F1 Prediction Market",
+    "Early Diabetes Detection",
+    "Distributed Share Market",
+    "Online Movie Ticket Booking",
+    "Sales GPT",
+    "BERT Sentiment Analysis",
+    "Book Recommendation System",
+    "Style Fusion",
+    "Text Summarizer",
+    "Task Tracker CLI",
+    "Unit Converter"
+  ],
+  "assets": {
+    "WhatsApp Image 2026-03-11 at 17.01.58.jpeg": "f458cb125e8d3ff9c4abca6bcd6e260addea75d326ead3b744256ab465860a57",
+    "yash-photo.jpg": "f458cb125e8d3ff9c4abca6bcd6e260addea75d326ead3b744256ab465860a57",
+    "Yash_Rana_SD_RESUME.pdf": "5beb05e15c67262ef877126f08748c823de083d14f8059990ed461f95c32b84f",
+    "Yash_Vianychandra_Rana.pdf": "87078b165467be07258b180249b6491065ba9d0d43b223fe74664d312a3fc489",
+    "public/resume.pdf": "5beb05e15c67262ef877126f08748c823de083d14f8059990ed461f95c32b84f",
+    "public/profile.jpg": "f458cb125e8d3ff9c4abca6bcd6e260addea75d326ead3b744256ab465860a57"
+  },
+  "legacy_anchors": [
+    "hero",
+    "about",
+    "experience",
+    "projects",
+    "skills",
+    "publications",
+    "contact"
+  ],
+  "features": [
+    "command palette",
+    "keyboard navigation",
+    "experience accordion",
+    "resume download",
+    "Netlify contact form",
+    "EmailJS API",
+    "chat API and component",
+    "space shooter and local scores",
+    "custom cursor",
+    "loading animation",
+    "profile photo spotlight"
+  ],
+  "projectRecords": [
+    {
+      "num": "01",
+      "title": "Redline Markets",
+      "tags": [
+        "Full Stack",
+        "Real-time"
+      ],
+      "desc": "F1 prediction market platform with Polymarket-style trading cards, GP Coins economy, Stripe checkout, Firebase Auth, and a Spring Boot REST + WebSocket backend for real-time trades and chat.",
+      "tech": [
+        "Next.js",
+        "TypeScript",
+        "Spring Boot",
+        "Firebase",
+        "WebSocket",
+        "Stripe"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24"
+        },
+        {
+          "label": "Live Demo",
+          "href": "https://github.com/ranayash24"
+        }
+      ]
+    },
+    {
+      "num": "02",
+      "title": "F1 Vision",
+      "tags": [
+        "Full Stack",
+        "ML / AI"
+      ],
+      "desc": "Full-stack F1 race intelligence platform with live telemetry ingestion, Gradient Boosting race predictions, driver/team analytics, and LLM-generated strategy insights.",
+      "tech": [
+        "FastAPI",
+        "Python",
+        "Next.js",
+        "PostgreSQL",
+        "ML",
+        "LLMs"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24"
+        }
+      ]
+    },
+    {
+      "num": "03",
+      "title": "Chess Application & Engine",
+      "tags": [
+        "Systems",
+        "AI"
+      ],
+      "desc": "Chess app with a custom engine implementing legal move generation, castling, en passant, and a decision layer using Minimax + Alpha-Beta pruning, iterative deepening, and a custom evaluation function.",
+      "tech": [
+        "Python",
+        "Minimax",
+        "Alpha-Beta Pruning",
+        "Iterative Deepening"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24"
+        }
+      ]
+    },
+    {
+      "num": "04",
+      "title": "F1 Prediction Market",
+      "tags": [
+        "Full Stack",
+        "ML / AI"
+      ],
+      "desc": "Real-time F1 prediction market with live data feeds, ML-driven odds, and user predictions on race outcomes and championship standings.",
+      "tech": [
+        "Python",
+        "FastAPI",
+        "Next.js",
+        "PostgreSQL",
+        "WebSocket",
+        "ML"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/f1_prediction_market"
+        }
+      ]
+    },
+    {
+      "num": "05",
+      "title": "Early Diabetes Detection",
+      "tags": [
+        "Published Research",
+        "ML / AI"
+      ],
+      "desc": "Published ICAAAI 2025 (Atlantis Press). SVM-based diagnostic model achieving 95% accuracy for early-stage diabetes prediction, benchmarked via ROC-AUC against Logistic Regression, Random Forest, and KNN.",
+      "tech": [
+        "Python",
+        "SVM",
+        "Scikit-learn",
+        "Pandas",
+        "Matplotlib"
+      ],
+      "links": [
+        {
+          "label": "Read Paper",
+          "href": "https://www.atlantis-press.com/proceedings/icaaai-25"
+        }
+      ]
+    },
+    {
+      "num": "06",
+      "title": "Distributed Share Market",
+      "tags": [
+        "Distributed Systems"
+      ],
+      "desc": "Fault-tolerant replicated trading system with active replication, consensus protocols, and autonomous recovery for high availability under crash and Byzantine failures.",
+      "tech": [
+        "Java",
+        "UDP",
+        "Active Replication",
+        "Consensus",
+        "Distributed Systems"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24"
+        }
+      ]
+    },
+    {
+      "num": "07",
+      "title": "Online Movie Ticket Booking",
+      "tags": [
+        "Full Stack"
+      ],
+      "desc": "Full-stack booking platform with authentication, real-time seat selection, simulated secure payments, and role-based access for admin and customer flows.",
+      "tech": [
+        "React",
+        "Spring Boot",
+        "MySQL",
+        "Vercel"
+      ],
+      "links": [
+        {
+          "label": "Live Demo",
+          "href": "https://book-my-show-chi.vercel.app"
+        },
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/book-my-show"
+        }
+      ]
+    },
+    {
+      "num": "08",
+      "title": "Sales GPT",
+      "tags": [
+        "ML / AI",
+        "LLM"
+      ],
+      "desc": "AI sales assistant automating lead qualification, personalized outreach, and real-time conversation coaching via LLMs.",
+      "tech": [
+        "Python",
+        "LangChain",
+        "OpenAI",
+        "FastAPI",
+        "React"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24"
+        }
+      ]
+    },
+    {
+      "num": "09",
+      "title": "BERT Sentiment Analysis",
+      "tags": [
+        "ML / AI",
+        "NLP"
+      ],
+      "desc": "Fine-tuned BERT for sentiment classification served via Flask REST API, with full training pipeline and inference endpoint.",
+      "tech": [
+        "Python",
+        "BERT",
+        "Hugging Face",
+        "Flask",
+        "PyTorch"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/bert_sentiment"
+        }
+      ]
+    },
+    {
+      "num": "10",
+      "title": "Book Recommendation System",
+      "tags": [
+        "ML / AI"
+      ],
+      "desc": "Collaborative filtering + content-based recommendation engine trained on reading history and user preferences.",
+      "tech": [
+        "Python",
+        "Pandas",
+        "Scikit-learn",
+        "Jupyter"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/book_recommended_system"
+        }
+      ]
+    },
+    {
+      "num": "11",
+      "title": "Style Fusion",
+      "tags": [
+        "ML / AI",
+        "Deep Learning"
+      ],
+      "desc": "Neural style transfer blending artistic styles with content images using VGG feature extraction and content/style loss optimization.",
+      "tech": [
+        "Python",
+        "PyTorch",
+        "VGG",
+        "Deep Learning"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/style_fusion"
+        }
+      ]
+    },
+    {
+      "num": "12",
+      "title": "Text Summarizer",
+      "tags": [
+        "ML / AI",
+        "NLP"
+      ],
+      "desc": "Transformer-based and extractive summarization pipeline generating concise summaries from long-form content.",
+      "tech": [
+        "Python",
+        "Transformers",
+        "NLP",
+        "Hugging Face"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24/Text_summarizer_project"
+        }
+      ]
+    },
+    {
+      "num": "13",
+      "title": "Task Tracker CLI",
+      "tags": [
+        "CLI Tool"
+      ],
+      "desc": "Terminal-based task manager with project grouping, priority levels, due dates, and rich progress visualization.",
+      "tech": [
+        "Python",
+        "Click",
+        "SQLite",
+        "Rich"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24"
+        }
+      ]
+    },
+    {
+      "num": "14",
+      "title": "Unit Converter",
+      "tags": [
+        "Full Stack"
+      ],
+      "desc": "100+ unit conversion with real-time results, history tracking, and currency support.",
+      "tech": [
+        "React",
+        "TypeScript",
+        "Node.js"
+      ],
+      "links": [
+        {
+          "label": "GitHub",
+          "href": "https://github.com/ranayash24"
+        }
+      ]
+    }
+  ]
+}

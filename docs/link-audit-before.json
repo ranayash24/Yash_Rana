@@ -1,0 +1,1847 @@
+{
+  "checkedAt": "2026-09-13T02:03:35.849Z",
+  "base": "http://127.0.0.1:3000",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "Yash Rana — Software Developer & AI / ML Portfolio",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "hero",
+        "orb-glow",
+        "orbit-stroke",
+        "projects",
+        "about",
+        "experience",
+        "skills",
+        "publications",
+        "lab",
+        "contact"
+      ],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3000/profile.jpg",
+          "loaded": true,
+          "alt": true
+        },
+        {
+          "src": "http://127.0.0.1:3000/profile.jpg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "description": "Portfolio of Yash Rana — Applied ML and generative AI developer, Concordia graduate, and Technical Specialist at GEXEL in Montréal. Explore multimodal RAG, NLP, and full-stack engineering."
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About | Yash Rana",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "skills",
+        "contact"
+      ],
+      "images": [],
+      "description": "Background, education, and technical skills of Yash Rana, a Concordia Master of Applied Computer Science graduate.",
+      "canonical": "https://yashrana.dev/about"
+    },
+    {
+      "path": "/experience",
+      "status": 200,
+      "title": "Experience | Yash Rana",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "experience-0",
+        "contact"
+      ],
+      "images": [],
+      "description": "Data science, analytics, and full-stack development experience at GEXEL Telecom International, Blue Data Consulting, The Sparks Foundation, and DevTown.",
+      "canonical": "https://yashrana.dev/experience"
+    },
+    {
+      "path": "/projects",
+      "status": 200,
+      "title": "Projects | Yash Rana",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Explore all 19 projects across machine learning, real-time applications, distributed systems, and software engineering.",
+      "canonical": "https://yashrana.dev/projects"
+    },
+    {
+      "path": "/research",
+      "status": 200,
+      "title": "Research & Achievements | Yash Rana",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Published machine learning research, early diabetes detection, and Yash Rana’s academic and engineering achievements.",
+      "canonical": "https://yashrana.dev/research"
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "title": "Contact | Yash Rana",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact-name",
+        "contact-email",
+        "contact-subject",
+        "contact-message",
+        "contact"
+      ],
+      "images": [],
+      "description": "Contact Yash Rana about software development roles, AI and ML research, and engineering collaborations.",
+      "canonical": "https://yashrana.dev/contact"
+    },
+    {
+      "path": "/projects/redline-markets",
+      "status": 200,
+      "title": "Redline Markets",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "F1 prediction market platform with Polymarket-style trading cards, GP Coins economy, Stripe checkout, Firebase Auth, and a Spring Boot REST + WebSocket backend for real-time trades and chat.",
+      "canonical": "https://yashrana.dev/projects/redline-markets"
+    },
+    {
+      "path": "/projects/f1-vision",
+      "status": 200,
+      "title": "F1 Vision",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Full-stack F1 race intelligence platform with live telemetry ingestion, Gradient Boosting race predictions, driver/team analytics, and LLM-generated strategy insights.",
+      "canonical": "https://yashrana.dev/projects/f1-vision"
+    },
+    {
+      "path": "/projects/chess-application-engine",
+      "status": 200,
+      "title": "Chess Application & Engine",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Playable C++17 chess engine with an SDL2 interface, legal move generation, castling, en passant, and promotion. Its threaded AI combines iterative deepening, alpha-beta pruning, quiescence search, transposition caching, and move ordering.",
+      "canonical": "https://yashrana.dev/projects/chess-application-engine"
+    },
+    {
+      "path": "/projects/f1-prediction-market",
+      "status": 200,
+      "title": "F1 Prediction Market",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Real-time F1 prediction market with live data feeds, ML-driven odds, and user predictions on race outcomes and championship standings.",
+      "canonical": "https://yashrana.dev/projects/f1-prediction-market"
+    },
+    {
+      "path": "/projects/early-diabetes-detection",
+      "status": 200,
+      "title": "Early Diabetes Detection",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Published ICAAAI 2025 (Atlantis Press). SVM-based diagnostic model achieving 95% accuracy for early-stage diabetes prediction, benchmarked via ROC-AUC against Logistic Regression, Random Forest, and KNN.",
+      "canonical": "https://yashrana.dev/projects/early-diabetes-detection"
+    },
+    {
+      "path": "/projects/distributed-share-market",
+      "status": 200,
+      "title": "Distributed Share Market",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Fault-tolerant replicated trading system with active replication, consensus protocols, and autonomous recovery for high availability under crash and Byzantine failures.",
+      "canonical": "https://yashrana.dev/projects/distributed-share-market"
+    },
+    {
+      "path": "/projects/online-movie-ticket-booking",
+      "status": 200,
+      "title": "Online Movie Ticket Booking",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Full-stack booking platform with authentication, real-time seat selection, simulated secure payments, and role-based access for admin and customer flows.",
+      "canonical": "https://yashrana.dev/projects/online-movie-ticket-booking"
+    },
+    {
+      "path": "/projects/sales-gpt",
+      "status": 200,
+      "title": "Sales GPT",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "AI sales assistant automating lead qualification, personalized outreach, and real-time conversation coaching via LLMs.",
+      "canonical": "https://yashrana.dev/projects/sales-gpt"
+    },
+    {
+      "path": "/projects/bert-sentiment-analysis",
+      "status": 200,
+      "title": "BERT Sentiment Analysis",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Fine-tuned BERT for sentiment classification served via Flask REST API, with full training pipeline and inference endpoint.",
+      "canonical": "https://yashrana.dev/projects/bert-sentiment-analysis"
+    },
+    {
+      "path": "/projects/book-recommendation-system",
+      "status": 200,
+      "title": "Book Recommendation System",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Collaborative filtering + content-based recommendation engine trained on reading history and user preferences.",
+      "canonical": "https://yashrana.dev/projects/book-recommendation-system"
+    },
+    {
+      "path": "/projects/style-fusion",
+      "status": 200,
+      "title": "Style Fusion",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Neural style transfer blending artistic styles with content images using VGG feature extraction and content/style loss optimization.",
+      "canonical": "https://yashrana.dev/projects/style-fusion"
+    },
+    {
+      "path": "/projects/text-summarizer",
+      "status": 200,
+      "title": "Abstractive Text Summarization",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Modular transformer-based summarization for long, unstructured documents, with separate ingestion, preprocessing, model inference, and evaluation stages for reproducible runs.",
+      "canonical": "https://yashrana.dev/projects/text-summarizer"
+    },
+    {
+      "path": "/projects/task-tracker-cli",
+      "status": 200,
+      "title": "Task Tracker CLI",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Java command-line task manager with task creation, updates, deletion, status transitions, and filtering. Tasks persist in a JSON file with timestamps, with validation for invalid commands and missing inputs.",
+      "canonical": "https://yashrana.dev/projects/task-tracker-cli"
+    },
+    {
+      "path": "/projects/unit-converter",
+      "status": 200,
+      "title": "Unit Converter",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Full-stack converter for length, weight, and temperature, with a React interface, light/dark themes, and a Spring Boot JSON REST API using enum-based conversions and temperature formulas.",
+      "canonical": "https://yashrana.dev/projects/unit-converter"
+    },
+    {
+      "path": "/projects/video-scene-intelligence",
+      "status": 200,
+      "title": "Video Scene Intelligence",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [
+        {
+          "src": "http://127.0.0.1:3000/projects/video-scene-intelligence-architecture.svg",
+          "loaded": true,
+          "alt": true
+        }
+      ],
+      "description": "Ask natural-language questions about video and get answers with timestamped citations. Combines Whisper transcripts, Gemini frame captions, and Qdrant semantic retrieval in an asynchronous, full-stack RAG pipeline.",
+      "canonical": "https://yashrana.dev/projects/video-scene-intelligence"
+    },
+    {
+      "path": "/projects/personal-wealth-intelligence-dashboard",
+      "status": 200,
+      "title": "Personal Wealth Intelligence Dashboard",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Portfolio dashboard bringing asset management, allocation charts, net-worth history, risk concentration, and CSV imports into one interface, with authentication and encrypted storage for sensitive asset data.",
+      "canonical": "https://yashrana.dev/projects/personal-wealth-intelligence-dashboard"
+    },
+    {
+      "path": "/projects/financial-fraud-detection",
+      "status": 200,
+      "title": "Financial Fraud Detection",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Explores fraud detection on highly imbalanced transaction data using cleaning, feature engineering, multicollinearity analysis, and Decision Tree / Random Forest classifiers. Evaluates precision, recall, and F1 alongside accuracy.",
+      "canonical": "https://yashrana.dev/projects/financial-fraud-detection"
+    },
+    {
+      "path": "/projects/number-guessing-game",
+      "status": 200,
+      "title": "Number Guessing Game",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Spring Boot CLI game with difficulty levels, limited attempts, higher/lower hints, timed rounds, and saved high scores for each difficulty.",
+      "canonical": "https://yashrana.dev/projects/number-guessing-game"
+    },
+    {
+      "path": "/projects/youtube-clone",
+      "status": 200,
+      "title": "YouTube Clone",
+      "h1": 1,
+      "ids": [
+        "main-content",
+        "contact"
+      ],
+      "images": [],
+      "description": "Web application exploring a YouTube-style experience using the Play Framework and Akka. Part of the earlier web engineering collection.",
+      "canonical": "https://yashrana.dev/projects/youtube-clone"
+    }
+  ],
+  "links": [
+    {
+      "href": "http://127.0.0.1:3000/#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/",
+      "text": "yr.\nYash Rana",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/about",
+        "/experience",
+        "/projects",
+        "/research",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/"
+    },
+    {
+      "href": "http://127.0.0.1:3000/about",
+      "text": "About",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/",
+        "/about",
+        "/experience",
+        "/projects",
+        "/research",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/about"
+    },
+    {
+      "href": "http://127.0.0.1:3000/experience",
+      "text": "Experience",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/",
+        "/",
+        "/",
+        "/",
+        "/",
+        "/",
+        "/about",
+        "/about",
+        "/experience",
+        "/projects",
+        "/research",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/experience"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects",
+      "text": "Projects",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/",
+        "/about",
+        "/about",
+        "/experience",
+        "/projects",
+        "/research",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects"
+    },
+    {
+      "href": "http://127.0.0.1:3000/research",
+      "text": "Research",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/",
+        "/about",
+        "/experience",
+        "/projects",
+        "/research",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/research"
+    },
+    {
+      "href": "http://127.0.0.1:3000/contact",
+      "text": "Contact",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/",
+        "/",
+        "/about",
+        "/about",
+        "/about",
+        "/experience",
+        "/experience",
+        "/projects",
+        "/projects",
+        "/research",
+        "/research",
+        "/contact",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/redline-markets",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/f1-vision",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/chess-application-engine",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/f1-prediction-market",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/early-diabetes-detection",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/distributed-share-market",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/online-movie-ticket-booking",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/sales-gpt",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/bert-sentiment-analysis",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/book-recommendation-system",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/style-fusion",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/text-summarizer",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/task-tracker-cli",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/unit-converter",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/video-scene-intelligence",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/financial-fraud-detection",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/number-guessing-game",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone",
+        "/projects/youtube-clone",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/contact"
+    },
+    {
+      "href": "http://127.0.0.1:3000/resume.pdf",
+      "text": "Résumé ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/",
+        "/",
+        "/",
+        "/about",
+        "/about",
+        "/experience",
+        "/experience",
+        "/projects",
+        "/projects",
+        "/research",
+        "/research",
+        "/contact",
+        "/contact",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/resume.pdf"
+    },
+    {
+      "href": "http://127.0.0.1:3000/#projects",
+      "text": "Explore my work",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/#projects",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/video-scene-intelligence",
+      "text": "Explore the case study",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/projects",
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/video-scene-intelligence"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/f1-vision",
+      "text": "RACE INTELLIGENCE\nYR / 02\nTELEMETRY IN\nSTRATEGY OUT\nFastAPI / Python / Next.js\nCONCEPT DIAGRAM\n01 / FULL STACK · ML / AI\nF1 Vision\n\nFull-stack F1 race intelligence platform with live telemetry ingestion, Gradient Boosting race predictions, driver/team analytics, and LLM-generated strategy insights.\n\nFastAPI\nPython\nNext.js\nPostgreSQL",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/projects",
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/f1-vision"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/text-summarizer",
+      "text": "LANGUAGE → MEANING\nYR / 12\n✳\nPython / Transformers / NLP\nCONCEPT DIAGRAM\n02 / ML / AI · NLP\nAbstractive Text Summarization\n\nModular transformer-based summarization for long, unstructured documents, with separate ingestion, preprocessing, model inference, and evaluation stages for reproducible runs.\n\nPython\nTransformers\nNLP\nHugging Face",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/projects",
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/text-summarizer"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/early-diabetes-detection",
+      "text": "PATTERNS → PREDICTION\nYR / 05\nFEATURE SPACE\nPython / SVM / Scikit-learn\nCONCEPT DIAGRAM\n03 / PUBLISHED RESEARCH · ML / AI\nEarly Diabetes Detection\n\nPublished ICAAAI 2025 (Atlantis Press). SVM-based diagnostic model achieving 95% accuracy for early-stage diabetes prediction, benchmarked via ROC-AUC against Logistic Regression, Random Forest, and KNN.\n\nPython\nSVM\nScikit-learn\nPandas",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/projects",
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/early-diabetes-detection"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/redline-markets",
+      "text": "CONNECTED SYSTEMS\nYR / 01\nCLIENT\nREDLINE\nDATA\nNext.js / TypeScript / Spring Boot\nCONCEPT DIAGRAM\n04 / FULL STACK · REAL-TIME\nRedline Markets\n\nF1 prediction market platform with Polymarket-style trading cards, GP Coins economy, Stripe checkout, Firebase Auth, and a Spring Boot REST + WebSocket backend for real-time trades and chat.\n\nNext.js\nTypeScript\nSpring Boot\nFirebase",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/projects",
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/redline-markets"
+    },
+    {
+      "href": "http://127.0.0.1:3000/about#skills",
+      "text": "04 / TOOLKIT\n\nTools for\nthe whole system.\n\nPython, Java, TypeScript, PyTorch, FastAPI, React, cloud platforms, and the engineering tools that connect them.\n\nExplore the stack",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/about#skills",
+      "fragmentExists": true
+    },
+    {
+      "href": "mailto:yashrana2402@gmail.com",
+      "text": "Email",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/",
+        "/about",
+        "/experience",
+        "/projects",
+        "/research",
+        "/contact",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone"
+      ],
+      "status": "email-app link; inbox not implied"
+    },
+    {
+      "href": "http://127.0.0.1:3000/about#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/about",
+        "/about"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/about#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/experience#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/experience",
+        "/experience"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/experience#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/video-scene-intelligence-architecture.svg",
+      "text": "Architecture ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/video-scene-intelligence",
+        "/projects/video-scene-intelligence"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/video-scene-intelligence-architecture.svg"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/chess-application-engine",
+      "text": "Chess Application & Engine",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/chess-application-engine"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/f1-prediction-market",
+      "text": "F1 Prediction Market",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/f1-prediction-market"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/distributed-share-market",
+      "text": "Distributed Share Market",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/distributed-share-market"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/online-movie-ticket-booking",
+      "text": "Online Movie Ticket Booking",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/online-movie-ticket-booking"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/sales-gpt",
+      "text": "Sales GPT",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/sales-gpt"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/bert-sentiment-analysis",
+      "text": "BERT Sentiment Analysis",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/bert-sentiment-analysis"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/book-recommendation-system",
+      "text": "Book Recommendation System",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/book-recommendation-system"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/style-fusion",
+      "text": "Style Fusion",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/style-fusion"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/task-tracker-cli",
+      "text": "Task Tracker CLI",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/task-tracker-cli"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/unit-converter",
+      "text": "Unit Converter",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/unit-converter"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/personal-wealth-intelligence-dashboard",
+      "text": "Personal Wealth Intelligence Dashboard",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/personal-wealth-intelligence-dashboard"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/financial-fraud-detection",
+      "text": "Financial Fraud Detection",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/financial-fraud-detection"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/number-guessing-game",
+      "text": "Number Guessing Game",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/number-guessing-game"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/youtube-clone",
+      "text": "YouTube Clone",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects",
+        "/projects"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/youtube-clone"
+    },
+    {
+      "href": "http://127.0.0.1:3000/research#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/research",
+        "/research"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/research#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/contact#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/contact",
+        "/contact"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/contact#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/resume-software-development.pdf",
+      "text": "Software development résumé ↗",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/contact"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/resume-software-development.pdf"
+    },
+    {
+      "href": "mailto:yashrana2402@gmail.com?subject=Portfolio%20enquiry&body=%0A%0AFrom%3A%20%0AEmail%3A%20",
+      "text": "yashrana2402@gmail.com",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/contact"
+      ],
+      "status": "email-app link; inbox not implied"
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/redline-markets#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/redline-markets",
+        "/projects/redline-markets"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/redline-markets#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/f1-vision#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/f1-vision",
+        "/projects/f1-vision"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/f1-vision#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/chess-application-engine#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/chess-application-engine",
+        "/projects/chess-application-engine"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/chess-application-engine#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/f1-prediction-market#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/f1-prediction-market",
+        "/projects/f1-prediction-market"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/f1-prediction-market#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/early-diabetes-detection#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/early-diabetes-detection",
+        "/projects/early-diabetes-detection"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/early-diabetes-detection#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/distributed-share-market#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/distributed-share-market",
+        "/projects/distributed-share-market"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/distributed-share-market#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/online-movie-ticket-booking#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/online-movie-ticket-booking",
+        "/projects/online-movie-ticket-booking"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/online-movie-ticket-booking#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/sales-gpt#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/sales-gpt",
+        "/projects/sales-gpt"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/sales-gpt#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/bert-sentiment-analysis#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/bert-sentiment-analysis",
+        "/projects/bert-sentiment-analysis"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/bert-sentiment-analysis#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/book-recommendation-system#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/book-recommendation-system",
+        "/projects/book-recommendation-system"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/book-recommendation-system#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/style-fusion#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/style-fusion",
+        "/projects/style-fusion"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/style-fusion#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/text-summarizer#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/text-summarizer",
+        "/projects/text-summarizer"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/text-summarizer#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/task-tracker-cli#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/task-tracker-cli",
+        "/projects/task-tracker-cli"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/task-tracker-cli#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/unit-converter#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/unit-converter",
+        "/projects/unit-converter"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/unit-converter#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/video-scene-intelligence#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/video-scene-intelligence",
+        "/projects/video-scene-intelligence"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/video-scene-intelligence#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/personal-wealth-intelligence-dashboard#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/personal-wealth-intelligence-dashboard"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/personal-wealth-intelligence-dashboard#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/financial-fraud-detection#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/financial-fraud-detection",
+        "/projects/financial-fraud-detection"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/financial-fraud-detection#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/number-guessing-game#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/number-guessing-game",
+        "/projects/number-guessing-game"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/number-guessing-game#main-content",
+      "fragmentExists": true
+    },
+    {
+      "href": "http://127.0.0.1:3000/projects/youtube-clone#main-content",
+      "text": "Skip to main content",
+      "target": "",
+      "rel": "",
+      "sources": [
+        "/projects/youtube-clone",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "http://127.0.0.1:3000/projects/youtube-clone#main-content",
+      "fragmentExists": true
+    }
+  ],
+  "assets": [
+    {
+      "src": "http://127.0.0.1:3000/_next/static/css/21e2593ccb47a343.css",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/fd9d1056-c869a4ccd3568651.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/117-d40fda2ca590cec8.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/main-app-5639a45f3d19a741.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/275-d2ff8a2f66d11431.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/972-130783e0d2226d7e.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/329-54a2895e256cc256.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/620-f74a0f142c88d8be.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/502-9ec595464c09ca29.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/page-3fc2698a29018ed1.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/201-9fc986a38972bd40.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/layout-b797dcc9bcf614ac.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/profile.jpg",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/webpack-7c0a575da02e21a3.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/30a37ab2-a10a6bcc22393f29.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/8e1d74a4-b8763e9806b13276.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/755-e1ed42e1ec4b5f06.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/about/page-66b0d5840b126857.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/experience/page-3391bd0d900a2094.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/projects/page-a983597dc91e8e3b.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/research/page-0225c05c4282995c.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/contact/page-503590f3c75d77fc.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/_next/static/chunks/app/projects/%5Bslug%5D/page-ac92ecc99c0e9ee3.js",
+      "status": 200
+    },
+    {
+      "src": "http://127.0.0.1:3000/projects/video-scene-intelligence-architecture.svg",
+      "status": 200
+    }
+  ],
+  "issues": [],
+  "external": [
+    {
+      "href": "https://github.com/ranayash24/transcript",
+      "text": "Source code ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/",
+        "/projects",
+        "/projects/video-scene-intelligence"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/transcript",
+      "title": "GitHub - ranayash24/transcript · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24",
+      "text": "GitHub",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/",
+        "/about",
+        "/experience",
+        "/projects",
+        "/projects",
+        "/projects",
+        "/research",
+        "/contact",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24",
+      "title": "ranayash24 (Yash_rana) · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://www.linkedin.com/in/yash-rana-a5b4b9214/",
+      "text": "LinkedIn",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/",
+        "/about",
+        "/experience",
+        "/projects",
+        "/research",
+        "/contact",
+        "/contact",
+        "/projects/redline-markets",
+        "/projects/f1-vision",
+        "/projects/chess-application-engine",
+        "/projects/f1-prediction-market",
+        "/projects/early-diabetes-detection",
+        "/projects/distributed-share-market",
+        "/projects/online-movie-ticket-booking",
+        "/projects/sales-gpt",
+        "/projects/bert-sentiment-analysis",
+        "/projects/book-recommendation-system",
+        "/projects/style-fusion",
+        "/projects/text-summarizer",
+        "/projects/task-tracker-cli",
+        "/projects/unit-converter",
+        "/projects/video-scene-intelligence",
+        "/projects/personal-wealth-intelligence-dashboard",
+        "/projects/financial-fraud-detection",
+        "/projects/number-guessing-game",
+        "/projects/youtube-clone"
+      ],
+      "status": 999,
+      "final": "https://www.linkedin.com/in/yash-rana-a5b4b9214",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/Text_summarizer_project",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/text-summarizer"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/Text_summarizer_project",
+      "title": "GitHub - ranayash24/Text_summarizer_project · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://www.atlantis-press.com/proceedings/icaaai-25/126012636",
+      "text": "Read Paper ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/research",
+        "/projects/early-diabetes-detection"
+      ],
+      "status": 200,
+      "final": "https://www.atlantis-press.com/proceedings/icaaai-25/126012636",
+      "title": "Enhancing Healthcare Diagnostics with SVM-Based Machine Learning for Diabetes Prediction | Atlantis Press",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/f1_prediction_market",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects",
+        "/projects/redline-markets",
+        "/projects/f1-prediction-market"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/f1_prediction_market",
+      "title": "GitHub - ranayash24/F1_prediction_market · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://redlinem.netlify.app/",
+      "text": "Live Demo ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/redline-markets"
+      ],
+      "status": 200,
+      "final": "https://redlinem.netlify.app/",
+      "title": "Redline Markets | F1 Prediction Market",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/Chess_Engine",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/chess-application-engine"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/Chess_Engine",
+      "title": "GitHub - ranayash24/Chess_Engine · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/DSMS",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/distributed-share-market"
+      ],
+      "status": 404,
+      "final": "https://github.com/ranayash24/DSMS",
+      "title": "Page not found · GitHub · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://second-project-delta.vercel.app/",
+      "text": "Live Demo ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/online-movie-ticket-booking"
+      ],
+      "status": 200,
+      "final": "https://second-project-delta.vercel.app/",
+      "title": "React App",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://book-my-show-chi.vercel.app/",
+      "text": "Previous Demo ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/online-movie-ticket-booking"
+      ],
+      "status": 200,
+      "final": "https://book-my-show-chi.vercel.app/",
+      "title": "React App",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/book-my-show",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/online-movie-ticket-booking"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/book-my-show",
+      "title": "GitHub - ranayash24/book-my-show · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/bert_sentiment",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/bert-sentiment-analysis"
+      ],
+      "status": 404,
+      "final": "https://github.com/ranayash24/bert_sentiment",
+      "title": "Page not found · GitHub · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/book_recommended_system",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/book-recommendation-system"
+      ],
+      "status": 404,
+      "final": "https://github.com/ranayash24/book_recommended_system",
+      "title": "Page not found · GitHub · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/style_fusion",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/style-fusion"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/style_fusion",
+      "title": "GitHub - ranayash24/style_fusion · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/Task_Tracker_CLI",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/task-tracker-cli"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/Task_Tracker_CLI",
+      "title": "GitHub - ranayash24/Task_Tracker_CLI · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/unit-converter",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/unit-converter"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/unit-converter",
+      "title": "GitHub - ranayash24/unit-converter · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/PERSONAL_WEALTH_DASHBOARD",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/personal-wealth-intelligence-dashboard"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/PERSONAL_WEALTH_DASHBOARD",
+      "title": "GitHub - ranayash24/PERSONAL_WEALTH_DASHBOARD · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://personal-wealth-dashboard-beryl.vercel.app/",
+      "text": "Live Demo ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/personal-wealth-intelligence-dashboard"
+      ],
+      "status": 200,
+      "final": "https://personal-wealth-dashboard-beryl.vercel.app/",
+      "title": "WealthIQ - Personal Wealth Intelligence Dashboard",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/Fraud_detection",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/financial-fraud-detection"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/Fraud_detection",
+      "title": "GitHub - ranayash24/Fraud_detection · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/Guess_Number",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/number-guessing-game"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/Guess_Number",
+      "title": "GitHub - ranayash24/Guess_Number: A CLI-based Number Guessing Game built with Spring Boot where the computer selects a random number (1–100) and the player guesses it within limited attempts based on difficulty level (Easy/Medium/Hard). The game provides higher/lower hints, tracks time taken, supports multiple rounds, and saves high scores for each difficulty. · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://github.com/ranayash24/Youtube_Clone",
+      "text": "GitHub ↗",
+      "target": "_blank",
+      "rel": "noreferrer",
+      "sources": [
+        "/projects",
+        "/projects/youtube-clone"
+      ],
+      "status": 200,
+      "final": "https://github.com/ranayash24/Youtube_Clone",
+      "title": "GitHub - ranayash24/Youtube_Clone: Youtube using akka play framework · GitHub",
+      "deploymentMissing": false
+    },
+    {
+      "href": "https://yashrana.dev",
+      "sources": [
+        "metadataBase",
+        "sitemap",
+        "README"
+      ],
+      "status": "unverified",
+      "error": "apiRequestContext.get: getaddrinfo ENOTFOUND yashrana.dev"
+    }
+  ]
+}

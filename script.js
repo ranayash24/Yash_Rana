@@ -1,4 +1,59 @@
 /* ===========================
+   LOADING SCREEN
+=========================== */
+(function initLoader() {
+  const loader = document.getElementById('loader');
+  if (!loader) return;
+  const bar = document.getElementById('loaderBar');
+  document.documentElement.style.overflow = 'hidden';
+  let p = 0;
+  const tick = setInterval(() => {
+    p += Math.random() * 18 + 4;
+    if (p >= 100) {
+      p = 100;
+      clearInterval(tick);
+      bar.style.width = '100%';
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        loader.style.transform = 'translateY(-100%)';
+        setTimeout(() => {
+          loader.remove();
+          document.documentElement.style.overflow = '';
+        }, 700);
+      }, 280);
+    } else {
+      bar.style.width = p + '%';
+    }
+  }, 55);
+})();
+
+/* ===========================
+   LN4-STYLE CHAR HOVER EFFECT
+=========================== */
+function wrapChars(el) {
+  // Only wrap direct text, not child elements with important structure
+  const text = el.textContent;
+  el.innerHTML = '';
+  el.classList.add('ln4-text');
+  [...text].forEach(char => {
+    const span = document.createElement('span');
+    span.className = 'ln4-char';
+    span.textContent = char === ' ' ? '\u00A0' : char;
+    el.appendChild(span);
+  });
+}
+
+// Apply to nav links (text only, not the CTA button)
+document.querySelectorAll('.nav__link:not(.nav__link--cta)').forEach(wrapChars);
+
+// Apply to mobile menu links
+document.querySelectorAll('.mobile-menu__link').forEach(wrapChars);
+
+// Apply to hero title lines
+document.querySelectorAll('.hero__title-line').forEach(wrapChars);
+
+
+/* ===========================
    LENIS SMOOTH SCROLL
 =========================== */
 const lenis = new Lenis({
@@ -48,11 +103,17 @@ const menuBtn = document.getElementById('menuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 const mobileLinks = document.querySelectorAll('.mobile-menu__link');
 
-lenis.on('scroll', ({ scroll }) => {
+const scrollProgressBar = document.getElementById('scrollProgressBar');
+
+lenis.on('scroll', ({ scroll, limit }) => {
   if (scroll > 50) {
     nav.classList.add('scrolled');
   } else {
     nav.classList.remove('scrolled');
+  }
+  // Update scroll progress bar
+  if (scrollProgressBar) {
+    scrollProgressBar.style.width = ((scroll / limit) * 100) + '%';
   }
 });
 
@@ -122,7 +183,7 @@ class Particle {
     const alpha = this.opacity * (1 - Math.abs(progress - 0.5) * 2);
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(0, 245, 212, ${alpha})`;
+    ctx.fillStyle = `rgba(255, 107, 0, ${alpha})`;
     ctx.fill();
   }
 }
@@ -153,7 +214,7 @@ class GridNode {
   draw() {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(0, 245, 212, 0.4)';
+    ctx.fillStyle = 'rgba(255, 107, 0, 0.4)';
     ctx.fill();
   }
 }
@@ -186,7 +247,7 @@ function drawConnections() {
         ctx.beginPath();
         ctx.moveTo(gridNodes[i].x, gridNodes[i].y);
         ctx.lineTo(gridNodes[j].x, gridNodes[j].y);
-        ctx.strokeStyle = `rgba(0, 245, 212, ${alpha})`;
+        ctx.strokeStyle = `rgba(255, 107, 0, ${alpha})`;
         ctx.lineWidth = 0.5;
         ctx.stroke();
       }
@@ -212,7 +273,7 @@ function animateCanvas() {
     canvas.width * 0.3, canvas.height * 0.4, 0,
     canvas.width * 0.3, canvas.height * 0.4, canvas.width * 0.7
   );
-  grad.addColorStop(0, 'rgba(0, 245, 212, 0.03)');
+  grad.addColorStop(0, 'rgba(255, 107, 0, 0.04)');
   grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
   ctx.fillStyle = grad;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -246,7 +307,7 @@ animateCanvas();
 /* ===========================
    SCROLL REVEAL
 =========================== */
-const revealElements = document.querySelectorAll('.reveal-up');
+const revealElements = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-blur');
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -313,6 +374,55 @@ document.querySelectorAll('.pcard').forEach(card => {
 });
 
 /* ===========================
+   STAGGERED CARD REVEALS
+=========================== */
+// Project cards — stagger in one by one
+(function staggerProjectCards() {
+  const cards = document.querySelectorAll('.projects__grid .pcard');
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(36px) scale(0.95)';
+    card.style.transition = `opacity 0.65s cubic-bezier(0.65,0.05,0,1), transform 0.65s cubic-bezier(0.65,0.05,0,1)`;
+    card.style.transitionDelay = `${i * 0.07}s`;
+  });
+
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0) scale(1)';
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+  cards.forEach(card => cardObserver.observe(card));
+})();
+
+// Achievement cards — stagger in
+(function staggerAchCards() {
+  const cards = document.querySelectorAll('.achievements-row .ach-card');
+  cards.forEach((card, i) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = `opacity 0.6s cubic-bezier(0.65,0.05,0,1), transform 0.6s cubic-bezier(0.65,0.05,0,1)`;
+    card.style.transitionDelay = `${i * 0.1}s`;
+  });
+
+  const achObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        achObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  cards.forEach(card => achObserver.observe(card));
+})();
+
+/* ===========================
    TIMELINE ANIMATION
 =========================== */
 const timelineLine = document.querySelector('.timeline__line');
@@ -370,25 +480,55 @@ if (typingEl) {
 }
 
 /* ===========================
-   CONTACT FORM
+   CONTACT FORM — EmailJS
+   SETUP (one-time, ~5 min):
+   1. Sign up free at https://emailjs.com
+   2. Add Service → Gmail → connect yashrana.datascience@gmail.com → copy Service ID
+   3. Email Templates → Create → add variables {{from_name}} {{from_email}} {{subject}} {{message}}
+      Set "To Email" to yashrana.datascience@gmail.com → copy Template ID
+   4. Account → API Keys → copy Public Key
+   5. Replace the three placeholders below
 =========================== */
+(function() {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init('xYpjewyPcaRv9w4yO');
+  }
+})();
+
 const form = document.getElementById('contactForm');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
     const originalHTML = btn.innerHTML;
 
-    btn.innerHTML = '<span>Message Sent! ✓</span>';
-    btn.style.background = '#00c4a0';
+    btn.innerHTML = '<span>Sending...</span><span class="btn__arrow">↻</span>';
     btn.disabled = true;
 
-    setTimeout(() => {
-      btn.innerHTML = originalHTML;
-      btn.style.background = '';
-      btn.disabled = false;
-      form.reset();
-    }, 3000);
+    try {
+      if (typeof emailjs === 'undefined') throw new Error('EmailJS not loaded');
+      await emailjs.sendForm(
+        'service_dtcqrgj',
+        'template_0w2rpis',
+        form
+      );
+      btn.innerHTML = '<span>Message Sent! ✓</span>';
+      btn.style.background = 'linear-gradient(135deg,#0f5132,#198754)';
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.disabled = false;
+        form.reset();
+      }, 3000);
+    } catch (err) {
+      btn.innerHTML = '<span>Failed — email me directly ✗</span>';
+      btn.style.background = 'linear-gradient(135deg,#5c1a1a,#8b0000)';
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    }
   });
 }
 
@@ -447,3 +587,168 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(s => sectionObserver.observe(s));
+
+/* ===========================
+   TEXT SCRAMBLE (LN-Style)
+=========================== */
+class TextScramble {
+  constructor(el) {
+    this.el = el;
+    this.original = el.textContent;
+    this.chars = '!<>-_\\/[]{}—=+*^?#';
+    this.frame = 0;
+    this.update = this.update.bind(this);
+  }
+  run() {
+    const promise = new Promise(r => this._resolve = r);
+    this.queue = Array.from(this.original, (ch, i) => ({
+      to: ch,
+      start: Math.floor(Math.random() * 6),
+      end: Math.floor(Math.random() * 8) + 7 + i,
+      char: ''
+    }));
+    cancelAnimationFrame(this._raf);
+    this.frame = 0;
+    this.update();
+    return promise;
+  }
+  update() {
+    let out = '', done = 0;
+    for (const q of this.queue) {
+      if (this.frame >= q.end) {
+        done++;
+        out += q.to;
+      } else if (this.frame >= q.start) {
+        if (!q.char || Math.random() < 0.28) {
+          q.char = q.to === ' ' ? ' ' : this.chars[Math.floor(Math.random() * this.chars.length)];
+        }
+        out += `<span class="scramble-char">${q.char}</span>`;
+      } else {
+        out += q.to;
+      }
+    }
+    this.el.innerHTML = out;
+    if (done === this.queue.length) {
+      this.el.textContent = this.original;
+      this._resolve();
+    } else {
+      this._raf = requestAnimationFrame(this.update);
+      this.frame++;
+    }
+  }
+}
+
+// Scramble project card titles on hover
+document.querySelectorAll('.pcard__title').forEach(el => {
+  const s = new TextScramble(el);
+  el.closest('.pcard').addEventListener('mouseenter', () => s.run());
+});
+
+// Scramble nav logo on hover
+const navLogoEl = document.querySelector('.nav__logo-text');
+if (navLogoEl) {
+  const s = new TextScramble(navLogoEl);
+  navLogoEl.closest('a').addEventListener('mouseenter', () => s.run());
+}
+
+/* ===========================
+   MAGNETIC CURSOR ON BTNS
+=========================== */
+document.querySelectorAll('.btn, .pcard__link, .contact__social, .hero__social-link').forEach(el => {
+  el.addEventListener('mousemove', (e) => {
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
+    el.style.transform = `translate(${x}px,${y}px)`;
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.transform = '';
+  });
+});
+
+/* ===========================
+   CURSOR RING ON HOVER
+=========================== */
+document.querySelectorAll('a, button, .pcard').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(2.8)';
+    cursor.style.background = 'transparent';
+    cursor.style.border = '1.5px solid var(--accent)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+    cursor.style.background = 'var(--accent)';
+    cursor.style.border = 'none';
+  });
+});
+
+/* ===========================
+   FILM GRAIN OVERLAY (LN-Style)
+=========================== */
+(function addGrain() {
+  const grain = document.createElement('div');
+  grain.id = 'film-grain';
+  grain.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(grain);
+})();
+
+/* ===========================
+   PROTECTION — RIGHT-CLICK & DEVTOOLS
+=========================== */
+// Disable right-click context menu
+document.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  return false;
+});
+
+// Block common DevTools keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  const key = e.key;
+  // F12
+  if (key === 'F12') { e.preventDefault(); return false; }
+  // Ctrl+Shift+I / Ctrl+Shift+J / Ctrl+Shift+C
+  if (e.ctrlKey && e.shiftKey && (key === 'I' || key === 'i' || key === 'J' || key === 'j' || key === 'C' || key === 'c')) {
+    e.preventDefault(); return false;
+  }
+  // Ctrl+U (View Source)
+  if (e.ctrlKey && (key === 'u' || key === 'U')) { e.preventDefault(); return false; }
+  // Ctrl+S (Save page)
+  if (e.ctrlKey && (key === 's' || key === 'S')) { e.preventDefault(); return false; }
+  // Cmd+Option+I (macOS)
+  if (e.metaKey && e.altKey && (key === 'i' || key === 'I')) { e.preventDefault(); return false; }
+  // Cmd+Shift+C (macOS)
+  if (e.metaKey && e.shiftKey && (key === 'c' || key === 'C')) { e.preventDefault(); return false; }
+});
+
+// Detect DevTools open via window size diff and show overlay
+(function detectDevTools() {
+  const threshold = 160;
+  function check() {
+    const widthDiff = window.outerWidth - window.innerWidth;
+    const heightDiff = window.outerHeight - window.innerHeight;
+    if (widthDiff > threshold || heightDiff > threshold) {
+      document.body.style.filter = 'blur(8px)';
+      document.body.style.pointerEvents = 'none';
+      if (!document.getElementById('devtools-warning')) {
+        const warn = document.createElement('div');
+        warn.id = 'devtools-warning';
+        warn.style.cssText = 'position:fixed;inset:0;display:flex;align-items:center;justify-content:center;z-index:99999;background:rgba(8,7,6,0.95);font-family:monospace;font-size:1.5rem;color:#FF6B00;text-align:center;pointer-events:all;flex-direction:column;gap:1rem;';
+        warn.innerHTML = '<span style="font-size:3rem">⚠</span><span>DevTools Detected</span><span style="font-size:0.9rem;color:rgba(255,255,255,0.4)">Close DevTools to continue.</span>';
+        document.body.appendChild(warn);
+      }
+    } else {
+      document.body.style.filter = '';
+      document.body.style.pointerEvents = '';
+      const warn = document.getElementById('devtools-warning');
+      if (warn) warn.remove();
+    }
+  }
+  setInterval(check, 1000);
+})();
+
+// Prevent image drag & save
+document.querySelectorAll('img').forEach(img => {
+  img.setAttribute('draggable', 'false');
+  img.addEventListener('dragstart', (e) => e.preventDefault());
+  img.addEventListener('contextmenu', (e) => e.preventDefault());
+});
