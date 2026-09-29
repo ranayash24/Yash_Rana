@@ -247,11 +247,11 @@ export default function AboutPage() {
               alongside backend and full-stack software.
             </p>
             <p className="text-muted text-sm leading-relaxed">
-              Currently a Technical Specialist, Network & Connectivity at GEXEL
-              Telecom International, applying root-cause analysis to diagnostic
-              telemetry and explaining technical findings to non-technical
-              users. Graduated with a Master of Applied Computer Science from
-              Concordia University, Montréal, in May 2026.
+              Currently a Software Developer at Kofax, building Python and
+              FastAPI backend services, REST API integrations, and AI-enabled
+              workflows using LLMs and RAG. Graduated with a Master of Applied
+              Computer Science from Concordia University, Montréal, in May
+              2026.
             </p>
           </motion.div>
 

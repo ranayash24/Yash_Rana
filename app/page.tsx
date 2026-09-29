@@ -77,8 +77,9 @@ export default function Home() {
           <p>
             From published ML research to real-time software, I’m interested in
             the journey from a promising idea to a system people can use. I
-            currently work in network diagnostics at GEXEL while building toward
-            my next role in applied ML and generative AI.
+            currently work as a Software Developer at Kofax, building backend
+            services and AI-enabled workflows, while pursuing my next role in
+            applied ML and generative AI.
           </p>
           <Link href="/about" className="text-link">
             More about me <ArrowUpRight size={17} />

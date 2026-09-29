@@ -10,7 +10,7 @@ export const PORTFOLIO_DOCUMENTS = [
 He has been working in computer science since 2020 and is known for delivering in deadline-driven environments with a patient, methodical approach to problem-solving.
 He is able to quickly pick up new tools and platforms, work independently or in cross-functional teams, and contribute to both research work and production-grade systems.
 Yash is currently open to work — he is available for full-time roles, internships, research collaborations, and consulting in Software Development, Data Science, Machine Learning, and related fields.
-He focuses on applied ML and generative AI, with 1.5+ years of applied ML and GenAI experience across internships and research. He currently works at GEXEL Telecom International as Technical Specialist, Network & Connectivity (June 2026–present). He is based in Montréal, open to relocating to Toronto, and eligible to work in Canada (PGWP). English: fluent. French: professional working proficiency.
+He focuses on applied ML and generative AI, with 1.5+ years of applied ML and GenAI experience across internships and research. He currently works at Kofax as a Software Developer (May 2026–present), building Python and FastAPI backend services, REST API integrations, and AI-enabled workflows using LLMs and RAG. He is based in Montréal, open to relocating to Toronto, and eligible to work in Canada (PGWP). English: fluent. French: professional working proficiency.
 His GitHub handle is ranayash24 and his portfolio spans AI, full stack development, and systems engineering.
 He was a SSIP Hackathon 2022 Finalist — a state-level innovation competition in India.
 He is co-author of peer-reviewed ML research, with a paper in Atlantis Press ICAAAI 2025 Proceedings.`,

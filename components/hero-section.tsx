@@ -53,8 +53,8 @@ export function HeroSection({ gameActive = false }: { gameActive?: boolean }) {
             </a>
           </div>
           <Link href="/experience" className="current-role-link">
-            <span className="status-dot" /> Currently at GEXEL · Network &
-            Connectivity <ArrowUpRight size={12} />
+            <span className="status-dot" /> Currently at Kofax · Software
+            Developer <ArrowUpRight size={12} />
           </Link>
           <div className="hero-footnote">
             <span className="tiny-cross">+</span>

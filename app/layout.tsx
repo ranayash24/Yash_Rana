@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Yash Rana",
   },
   description:
-    "Portfolio of Yash Rana — Applied ML and generative AI developer, Concordia graduate, and Technical Specialist at GEXEL in Montréal. Explore multimodal RAG, NLP, and full-stack engineering.",
+    "Portfolio of Yash Rana — Applied ML and generative AI developer, Concordia graduate, and Software Developer at Kofax in Montréal. Explore multimodal RAG, NLP, and full-stack engineering.",
   keywords: [
     "Yash Rana",
     "portfolio",

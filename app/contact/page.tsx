@@ -90,7 +90,7 @@ export default function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-muted text-base leading-relaxed mb-10">
-              Currently at GEXEL and open to applied ML, generative AI, and
+              Currently at Kofax and open to applied ML, generative AI, and
               software engineering opportunities. Based in Montréal, open to
               relocating to Toronto, and eligible to work in Canada (PGWP). Tell
               me about the role, collaboration, or idea you have in mind.
